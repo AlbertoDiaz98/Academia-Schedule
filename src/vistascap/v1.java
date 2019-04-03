@@ -184,33 +184,23 @@ public class v1 extends javax.swing.JFrame {
 
     private void btnEstudianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstudianteActionPerformed
         // TODO add your handling code here:
-        vAgregarEstudiante ven = new vAgregarEstudiante();
-        ven.setVisible(true);
     }//GEN-LAST:event_btnEstudianteActionPerformed
 
     private void btnPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPersonaActionPerformed
         // TODO add your handling code here:
-        vAgregarPersona ven = new vAgregarPersona();
-        ven.setVisible(true);
+
     }//GEN-LAST:event_btnPersonaActionPerformed
 
     private void btnLicenciadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLicenciadoActionPerformed
         // TODO add your handling code here:
-        vAgregarLicenciado ven = new vAgregarLicenciado();
-        ven.setVisible(true);
     }//GEN-LAST:event_btnLicenciadoActionPerformed
 
     private void btnDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoctorActionPerformed
         // TODO add your handling code here:
-        vAgregarDoctor ven = new vAgregarDoctor();
-        ven.setVisible(true);
     }//GEN-LAST:event_btnDoctorActionPerformed
 
     private void btnDeportistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeportistaActionPerformed
         // TODO add your handling code here:
-        //this.setVisible(false);
-        vAgregarDeportista ven = new vAgregarDeportista();
-        ven.setVisible(true);
     }//GEN-LAST:event_btnDeportistaActionPerformed
 
     /**

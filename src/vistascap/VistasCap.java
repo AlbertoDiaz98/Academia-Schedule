@@ -16,7 +16,6 @@ public class VistasCap {
      */
     public static void main(String[] args) {
         // TODO code application logic here     
-        v1 ven = new v1();
-        ven.setVisible(true); 
+   
     }
 }

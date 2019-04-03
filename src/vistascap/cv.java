@@ -9,12 +9,12 @@ package vistascap;
  *
  * @author aadmon
  */
-public class vAgregarDeportista extends javax.swing.JFrame {
+public class cv extends javax.swing.JFrame {
 
     /**
-     * Creates new form v
+     * Creates new form cv
      */
-    public vAgregarDeportista() {
+    public cv() {
         initComponents();
     }
 
@@ -27,40 +27,41 @@ public class vAgregarDeportista extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel3 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        txtNombre = new javax.swing.JTextField();
+        jSeparator2 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        txtNombre = new javax.swing.JTextField();
-        cBoxAño = new javax.swing.JComboBox();
-        cBoxDeporte = new javax.swing.JComboBox();
-        cBoxGenero = new javax.swing.JComboBox();
-        cBoxDia = new javax.swing.JComboBox();
-        cBoxMes = new javax.swing.JComboBox();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jSeparator2 = new javax.swing.JSeparator();
-        txtApellidoP = new javax.swing.JTextField();
-        jSeparator3 = new javax.swing.JSeparator();
         txtApellidoM = new javax.swing.JTextField();
+        txtApellidoP = new javax.swing.JTextField();
         jSeparator4 = new javax.swing.JSeparator();
-        txtCelular = new javax.swing.JTextField();
-        jSeparator5 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        cBoxGenero = new javax.swing.JComboBox();
+        cBoxDeporte = new javax.swing.JComboBox();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        cBoxMes = new javax.swing.JComboBox();
+        cBoxDia = new javax.swing.JComboBox();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        cBoxAño = new javax.swing.JComboBox();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
         txtCasa = new javax.swing.JTextField();
+        txtCelular = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        jSeparator5 = new javax.swing.JSeparator();
         jSeparator6 = new javax.swing.JSeparator();
-        txtEmail = new javax.swing.JTextField();
         jSeparator7 = new javax.swing.JSeparator();
+        txtEmail = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
         btnVolver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -78,30 +79,52 @@ public class vAgregarDeportista extends javax.swing.JFrame {
         jPanel1.add(jSeparator1);
         jSeparator1.setBounds(10, 90, 800, 20);
 
-        jLabel1.setBackground(new java.awt.Color(0, 102, 102));
-        jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(55, 94, 151));
-        jLabel1.setText("*Nombre(s): ");
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 823, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 823, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
 
         jLabel2.setBackground(new java.awt.Color(0, 102, 102));
         jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(55, 94, 151));
         jLabel2.setText("Agregar Deportista");
 
-        jLabel4.setBackground(new java.awt.Color(0, 102, 102));
-        jLabel4.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(55, 94, 151));
-        jLabel4.setText("Apellido Materno: ");
+        jLabel1.setBackground(new java.awt.Color(0, 102, 102));
+        jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(55, 94, 151));
+        jLabel1.setText("*Nombre(s): ");
+
+        txtNombre.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        txtNombre.setBorder(null);
+
+        jSeparator2.setBackground(new java.awt.Color(0, 102, 102));
+        jSeparator2.setForeground(new java.awt.Color(55, 94, 151));
 
         jLabel5.setBackground(new java.awt.Color(0, 102, 102));
         jLabel5.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(55, 94, 151));
         jLabel5.setText("*Apellido Paterno: ");
 
-        jLabel6.setBackground(new java.awt.Color(0, 102, 102));
-        jLabel6.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(55, 94, 151));
-        jLabel6.setText("Año:");
+        jLabel4.setBackground(new java.awt.Color(0, 102, 102));
+        jLabel4.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(55, 94, 151));
+        jLabel4.setText("Apellido Materno: ");
 
         jLabel7.setBackground(new java.awt.Color(0, 102, 102));
         jLabel7.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -113,97 +136,96 @@ public class vAgregarDeportista extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(55, 94, 151));
         jLabel8.setText("*Deporte: ");
 
-        jLabel9.setBackground(new java.awt.Color(0, 102, 102));
-        jLabel9.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(55, 94, 151));
-        jLabel9.setText("Medios Contacto: ");
+        txtApellidoM.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        txtApellidoM.setBorder(null);
 
-        txtNombre.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        txtNombre.setBorder(null);
+        txtApellidoP.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        txtApellidoP.setBorder(null);
 
-        cBoxAño.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        cBoxAño.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990", "1989", "1988", "1987", "1986", "1985", "1984", "1983", "1982", "1981", "1980", "1979", "1978", "1977", "1976", "1975", "1974", "1973", "1972", "1971", "1970", "1969", "1968", "1967", "1966", "1965", "1964", "1963", "1962", "1961", "1960", "1959", "1958", "1957", "1956", "1955", "1954", "1953", "1952", "1951", "1950", "1949", "1948", "1947", "1946", "1945", "1944", "1943", "1942", "1941", "1940", " " }));
-        cBoxAño.setBorder(null);
+        jSeparator4.setBackground(new java.awt.Color(0, 102, 102));
+        jSeparator4.setForeground(new java.awt.Color(55, 94, 151));
 
-        cBoxDeporte.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        cBoxDeporte.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Futbol", "Basektbol", "Beisbol" }));
-        cBoxDeporte.setBorder(null);
+        jSeparator3.setBackground(new java.awt.Color(0, 102, 102));
+        jSeparator3.setForeground(new java.awt.Color(55, 94, 151));
 
         cBoxGenero.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         cBoxGenero.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Masculino", "Femenino" }));
         cBoxGenero.setBorder(null);
         cBoxGenero.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        cBoxDia.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        cBoxDia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
-        cBoxDia.setBorder(null);
-
-        cBoxMes.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        cBoxMes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
-        cBoxMes.setBorder(null);
+        cBoxDeporte.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        cBoxDeporte.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Futbol", "Basektbol", "Beisbol" }));
+        cBoxDeporte.setBorder(null);
 
         jLabel10.setBackground(new java.awt.Color(0, 102, 102));
         jLabel10.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(55, 94, 151));
         jLabel10.setText("Fecha Nacimiento: ");
 
-        jLabel11.setBackground(new java.awt.Color(0, 102, 102));
-        jLabel11.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(55, 94, 151));
-        jLabel11.setText("E-mail:");
-
         jLabel12.setBackground(new java.awt.Color(0, 102, 102));
         jLabel12.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(55, 94, 151));
         jLabel12.setText("Mes:");
+
+        cBoxMes.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        cBoxMes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
+        cBoxMes.setBorder(null);
+
+        cBoxDia.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        cBoxDia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        cBoxDia.setBorder(null);
 
         jLabel13.setBackground(new java.awt.Color(0, 102, 102));
         jLabel13.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(55, 94, 151));
         jLabel13.setText("Dia:");
 
-        jLabel14.setBackground(new java.awt.Color(0, 102, 102));
-        jLabel14.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(55, 94, 151));
-        jLabel14.setText("No. Celular:");
+        jLabel6.setBackground(new java.awt.Color(0, 102, 102));
+        jLabel6.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(55, 94, 151));
+        jLabel6.setText("Año:");
+
+        cBoxAño.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        cBoxAño.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990", "1989", "1988", "1987", "1986", "1985", "1984", "1983", "1982", "1981", "1980", "1979", "1978", "1977", "1976", "1975", "1974", "1973", "1972", "1971", "1970", "1969", "1968", "1967", "1966", "1965", "1964", "1963", "1962", "1961", "1960", "1959", "1958", "1957", "1956", "1955", "1954", "1953", "1952", "1951", "1950", "1949", "1948", "1947", "1946", "1945", "1944", "1943", "1942", "1941", "1940", " " }));
+        cBoxAño.setBorder(null);
+
+        jLabel9.setBackground(new java.awt.Color(0, 102, 102));
+        jLabel9.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(55, 94, 151));
+        jLabel9.setText("Medios Contacto: ");
 
         jLabel15.setBackground(new java.awt.Color(0, 102, 102));
         jLabel15.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(55, 94, 151));
         jLabel15.setText("No. Casa:");
 
-        jSeparator2.setBackground(new java.awt.Color(0, 102, 102));
-        jSeparator2.setForeground(new java.awt.Color(55, 94, 151));
-
-        txtApellidoP.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        txtApellidoP.setBorder(null);
-
-        jSeparator3.setBackground(new java.awt.Color(0, 102, 102));
-        jSeparator3.setForeground(new java.awt.Color(55, 94, 151));
-
-        txtApellidoM.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        txtApellidoM.setBorder(null);
-
-        jSeparator4.setBackground(new java.awt.Color(0, 102, 102));
-        jSeparator4.setForeground(new java.awt.Color(55, 94, 151));
+        txtCasa.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        txtCasa.setBorder(null);
 
         txtCelular.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         txtCelular.setBorder(null);
 
+        jLabel14.setBackground(new java.awt.Color(0, 102, 102));
+        jLabel14.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(55, 94, 151));
+        jLabel14.setText("No. Celular:");
+
         jSeparator5.setBackground(new java.awt.Color(0, 102, 102));
         jSeparator5.setForeground(new java.awt.Color(55, 94, 151));
-
-        txtCasa.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        txtCasa.setBorder(null);
 
         jSeparator6.setBackground(new java.awt.Color(0, 102, 102));
         jSeparator6.setForeground(new java.awt.Color(55, 94, 151));
 
+        jSeparator7.setBackground(new java.awt.Color(0, 102, 102));
+        jSeparator7.setForeground(new java.awt.Color(55, 94, 151));
+
         txtEmail.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         txtEmail.setBorder(null);
 
-        jSeparator7.setBackground(new java.awt.Color(0, 102, 102));
-        jSeparator7.setForeground(new java.awt.Color(55, 94, 151));
+        jLabel11.setBackground(new java.awt.Color(0, 102, 102));
+        jLabel11.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(55, 94, 151));
+        jLabel11.setText("E-mail:");
 
         btnVolver.setBackground(new java.awt.Color(255, 255, 255));
         btnVolver.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -223,8 +245,12 @@ public class vAgregarDeportista extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(190, 190, 190)
@@ -294,19 +320,16 @@ public class vAgregarDeportista extends javax.swing.JFrame {
                                 .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(50, 50, 50)
                                 .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(70, 70, 70))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 823, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                        .addGap(49, 49, 49))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addGap(49, 49, 49)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -366,9 +389,8 @@ public class vAgregarDeportista extends javax.swing.JFrame {
                     .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -395,23 +417,20 @@ public class vAgregarDeportista extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(vAgregarDeportista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cv.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(vAgregarDeportista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cv.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(vAgregarDeportista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cv.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(vAgregarDeportista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cv.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new vAgregarDeportista().setVisible(true);
+                new cv().setVisible(true);
             }
         });
     }
@@ -439,6 +458,7 @@ public class vAgregarDeportista extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
