@@ -18,13 +18,9 @@ public class Connection {
    static String url = "jdbc:mysql://localhost/Contactos";
 
    java.sql.Connection conn = null;
-
-   /** Constructor de DbConnection */
    public Connection() {
       try{
-         //obtenemos el driver de para mysql
          Class.forName("com.mysql.jdbc.Driver");
-         //obtenemos la conexi�n
          conn = DriverManager.getConnection(url,login,password);
 
          if (conn!=null){
@@ -39,7 +35,7 @@ public class Connection {
          System.out.println(e);
       }
    }
-   /**Permite retornar la conexi�n*/
+   
    public java.sql.Connection getConnection(){
       return conn;
    }
