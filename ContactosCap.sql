@@ -41,11 +41,6 @@ foreign key (idLic) references Licenciado(idLic));
 create table MediosDeContactoPers (mediContacPers varchar(2000),idMediContacPers int primary key, idPers int,
 foreign key (idPers) references Persona(idPers));
                                         
-//Query Deportista//
 
-Insert into Deportista (idDep, nombreDep, apPaDep, apMaDep, generoDep, dia, mes, año, deporte)values ("","","","","","","","","");
-Select * from Deportista where id = idDep;
-Delete from Deportista where id = idDep;
-                                        
 
 
