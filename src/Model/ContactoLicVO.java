@@ -11,18 +11,18 @@ package Model;
  */
 public class ContactoLicVO {
 
-    private String NumCalularLic;
+    private String NumCelularLic;
     private String NumCasaLic;
     private String CorreoLic;
     private String idContactoLic;
+   
     
-    
-    public String getNumCalularLic() {
-        return NumCalularLic;
+    public String getNumCelularLic() {
+        return NumCelularLic;
     }
 
-    public void setNumCalularLic(String NumCalularLic) {
-        this.NumCalularLic = NumCalularLic;
+    public void setNumCelularLic(String NumCalularLic) {
+        this.NumCelularLic = NumCalularLic;
     }
 
     public String getNumCasaLic() {

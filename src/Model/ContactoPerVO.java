@@ -11,17 +11,17 @@ package Model;
  */
 public class ContactoPerVO {
 
-     private String NumCalularPer;
+     private String NumCelularPer;
     private String NumCasaPer;
     private String CorreoPer;
     private String idContactoPer;
    
-    public String getNumCalularPer() {
-        return NumCalularPer;
+    public String getNumCelularPer() {
+        return NumCelularPer;
     }
 
-    public void setNumCalularPer(String NumCalularPer) {
-        this.NumCalularPer = NumCalularPer;
+    public void setNumCelularPer(String NumCalularPer) {
+        this.NumCelularPer = NumCalularPer;
     }
 
     public String getNumCasaPer() {
