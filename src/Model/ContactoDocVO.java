@@ -10,5 +10,42 @@ package Model;
  * @author beto-
  */
 public class ContactoDocVO {
+
+    private String NumCalularDoc;
+    private String NumCasaDoc;
+    private String CorreoDoc;
+    private String idContactoDoc;
+    
+    public String getNumCalularDoc() {
+        return NumCalularDoc;
+    }
+
+    public void setNumCalularDoc(String NumCalularDoc) {
+        this.NumCalularDoc = NumCalularDoc;
+    }
+
+    public String getNumCasaDoc() {
+        return NumCasaDoc;
+    }
+
+    public void setNumCasaDoc(String NumCasaDoc) {
+        this.NumCasaDoc = NumCasaDoc;
+    }
+
+    public String getCorreoDoc() {
+        return CorreoDoc;
+    }
+
+    public void setCorreoDoc(String CorreoDoc) {
+        this.CorreoDoc = CorreoDoc;
+    }
+
+    public String getIdContactoDoc() {
+        return idContactoDoc;
+    }
+
+    public void setIdContactoDoc(String idContactoDoc) {
+        this.idContactoDoc = idContactoDoc;
+    }
     
 }

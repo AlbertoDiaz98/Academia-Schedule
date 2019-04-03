@@ -10,5 +10,35 @@ package Model;
  * @author beto-
  */
 public class ContactoDepVO {
+
+    private String NumCalularDep;
+    private String NumCasaDep;
+    private String CorreoDep;
+    private String idContactoDep;
+    
+    public String getNumCalularDep() {
+        return NumCalularDep;
+    }
+
+    public void setNumCalularDep(String NumCalularDep) {
+        this.NumCalularDep = NumCalularDep;
+    }
+
+    public String getNumCasaDep() {
+        return NumCasaDep;
+    }
+
+    public void setNumCasaDep(String NumCasaDep) {
+        this.NumCasaDep = NumCasaDep;
+    }
+
+    public String getCorreoDep() {
+        return CorreoDep;
+    }
+
+    public void setCorreoDep(String CorreoDep) {
+        this.CorreoDep = CorreoDep;
+    }
+    
     
 }
