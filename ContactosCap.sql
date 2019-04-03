@@ -40,7 +40,39 @@ foreign key (idLic) references Licenciado(idLic));
 //Tabla para Medios de contacto para Persona//                                          
 create table MediosDeContactoPers ( CelPers varchar(2000), TelCasaPers varchar(2000), CorreoPers varchar(2000), idMediContacPers int auto_increment primary key, idPers int,
 foreign key (idPers) references Persona(idPers));
-                                        
 
+//Proceso de Insercion de datos a Contactors//
+DELIMITER $$
+
+CREATE PROCEDURE insert_into_MediosDeContactoDep(in cel, in cCasa, in Correo, in nombre,in nomPa, in nomMa)
+BEGIN
+    insert into MediosDeContactoDep (CelDep,TelCasaDep,CorreoDep,idDep) values (cel,cCasa,Correo,(select idDep from Deportista WHERE nombreDep = nombre and apPaDep = nomPa and apMaDep= nomMa ));
+END;
+                                 
+CREATE PROCEDURE insert_into_MediosDeContactoDoc(in cel, in cCasa, in Correo, in nombre,in nomPa, in nomMa)
+BEGIN
+    insert into MediosDeContactoDep (CelDoc,TelCasaDoc,CorreoDoc,idDoc) values (cel,cCasa,Correo,(select idDoc from Doctor WHERE nombreDoc = nombre and apPaDoc = nomPa and apMaDoc= nomMa ));
+END                                        
+;
+                                                                                                                                   
+CREATE PROCEDURE insert_into_MediosDeContactoEstu(in cel, in cCasa, in Correo, in nombre,in nomPa, in nomMa)
+BEGIN
+    insert into MediosDeContactoDep (CelEstu,TelCasaEstu,CorreoEstu,idEstu) values (cel,cCasa,Correo,(select idDoc from Estudiante WHERE nombreEstu = nombre and apPaEstu = nomPa and apMaEstu= nomMa ));
+END                                        
+;
+                                                                                                      
+CREATE PROCEDURE insert_into_MediosDeContactoLic(in cel, in cCasa, in Correo, in nombre,in nomPa, in nomMa)
+BEGIN
+    insert into MediosDeContactoDep (CelLic,TelCasaLic,CorreoLic,idLic) values (cel,cCasa,Correo,(select idLic from Licenciado WHERE nombreLic = nombre and apPaLic = nomPa and apMaLic= nomMa ));
+END                                        
+;
+
+CREATE PROCEDURE insert_into_MediosDeContactoPers(in cel, in cCasa, in Correo, in nombre,in nomPa, in nomMa)
+BEGIN
+    insert into MediosDeContactoDep (CelPers,TelCasaPers,CorreoEstu,idPers) values (cel,cCasa,Correo,(select idPers from Persona WHERE nombrePers = nombre and apPaPers = nomPa and apMaPers = nomMa ));
+END                                        
+;
+                                                                                                  
+                                                                                                  
 
 
