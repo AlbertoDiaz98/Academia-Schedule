@@ -16,52 +16,50 @@ import javax.swing.JOptionPane;
  * @author beto-
  */
 public class DeportistasDAO {
-    
-    	Connection conex= new Connection();
-        PreparedStatement est;
-        
-     public void addPerson(DeportistasVO deportista){
 
-	try{
-                est = conex.getConnection().prepareStatement("INSERT"
+    Connection conex = new Connection();
+    PreparedStatement est;
+
+    public void addPerson(DeportistasVO deportista) {
+
+        try {
+            est = conex.getConnection().prepareStatement("INSERT"
                     + " INTO Deportista VALUES (?,?,?,?,?,?,?,?,?)");
-                est.setInt(1, deportista.getIdDep());
-                est.setString(2, deportista.getNombreDep());
-                est.setString(3, deportista.getApPaDep());
-                est.setString(4, deportista.getApMaDep());
-                est.setString(5, deportista.getGeneroDep());
-                est.setString(6, deportista.getDia());
-                est.setString(7, deportista.getMes());
-                est.setString(8, deportista.getAño());
-                est.setString(9, deportista.getDeporte());
-                est.executeUpdate();
-		est.close();
-                conex.desconectar();
-			
-	} catch (SQLException e) {
+            est.setString(1, deportista.getNombreDep());
+            est.setString(2, deportista.getApPaDep());
+            est.setString(3, deportista.getApMaDep());
+            est.setString(4, deportista.getGeneroDep());
+            est.setString(5, deportista.getDia());
+            est.setString(6, deportista.getMes());
+            est.setString(7, deportista.getAño());
+            est.setString(8, deportista.getDeporte());
+            est.executeUpdate();
+            est.close();
+            conex.desconectar();
+
+        } catch (SQLException e) {
             System.out.println(e.getMessage());
-            JOptionPane.showMessageDialog(null, "Error al registrar: \n"+e);
+            JOptionPane.showMessageDialog(null, "Error al registrar: \n" + e);
         }
     }
-    
-     
-    public DeportistasVO buscarPersona(int codigo){
-        Connection conex= new Connection();
-        DeportistasVO personFound= new DeportistasVO();
-	boolean existe=false;
-	try{
+
+    public DeportistasVO buscarPersona(int codigo) {
+        Connection conex = new Connection();
+        DeportistasVO personFound = new DeportistasVO();
+        boolean existe = false;
+        try {
             PreparedStatement consulta;
             consulta = conex.getConnection().prepareStatement(
-                    "SELECT * FROM Deportistas where id = ? ");
+                    "SELECT * FROM Deportista where idDep = ? ");
             consulta.setInt(1, codigo);
             ResultSet res = consulta.executeQuery();
-            while(res.next()){
-                existe=true;
+            while (res.next()) {
+                existe = true;
                 personFound.setIdDep(Integer.parseInt(res.getString("idDep")));
-		personFound.setNombreDep(res.getString("nombreDep"));
-		personFound.setApPaDep(res.getString("ApPaDep"));
-		personFound.setApMaDep(res.getString("ApMaDep"));
-		personFound.setGeneroDep(res.getString("generoDep"));
+                personFound.setNombreDep(res.getString("nombreDep"));
+                personFound.setApPaDep(res.getString("ApPaDep"));
+                personFound.setApMaDep(res.getString("ApMaDep"));
+                personFound.setGeneroDep(res.getString("generoDep"));
                 personFound.setDia(res.getString("dia"));
                 personFound.setMes(res.getString("mes"));
                 personFound.setAño(res.getString("año"));
@@ -69,44 +67,46 @@ public class DeportistasDAO {
             }
             consulta.close();
             res.close();
-            conex.desconectar();					
-	} catch (SQLException e){
-            JOptionPane.showMessageDialog(null,"Error: \n"+e);	}
-        
-	if (existe) {
+            conex.desconectar();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error: \n" + e);
+        }
+
+        if (existe) {
             return personFound;
-	} else return null;				
+        } else {
+            return null;
+        }
     }
-     
-     
-    public void eliminarPersona(int code){
-        Connection conex= new Connection();
-	try{
-            
-            est=conex.getConnection().prepareStatement("DELETE FROM Deportista "
-                    + "WHERE idDep = ?");            
+
+    public void eliminarPersona(int code) {
+        Connection conex = new Connection();
+        try {
+
+            est = conex.getConnection().prepareStatement("DELETE FROM Deportista "
+                    + "WHERE idDep = ?");
             est.setInt(1, code);
             est.execute();
             JOptionPane.showMessageDialog(null,
                     "Datos eliminados Correctamente",
-                    "Información",JOptionPane.INFORMATION_MESSAGE);
+                    "Información", JOptionPane.INFORMATION_MESSAGE);
             est.close();
             conex.desconectar();
-			
-	} catch (SQLException e) {
+
+        } catch (SQLException e) {
             System.out.println(e.getMessage());
-            JOptionPane.showMessageDialog(null, "Error al eliminar dator: \n"+e);
-	}
+            JOptionPane.showMessageDialog(null, "Error al eliminar dator: \n" + e);
+        }
     }
-    
-    public void modificarPersona(DeportistasVO deportista){
-	try{
-            String consulta="UPDATE persona SET idDep= ? "
+
+    public void modificarPersona(DeportistasVO deportista) {
+        try {
+            String consulta = "UPDATE Deportista SET idDep= ? "
                     + ",nombreDep = ? , apPaDep=? , apMaDep=? , generoDep=? "
                     + ", dia= ? , mes= ?, año= ? , deporte= ? WHERE idDep=? ";
             PreparedStatement estatuto;
             estatuto = conex.getConnection().prepareStatement(consulta);
-			
+
             estatuto.setInt(1, deportista.getIdDep());
             estatuto.setString(2, deportista.getNombreDep());
             estatuto.setString(3, deportista.getApPaDep());
@@ -118,20 +118,19 @@ public class DeportistasDAO {
             estatuto.setString(9, deportista.getDeporte());
             estatuto.executeUpdate();
 
-            JOptionPane.showMessageDialog(null, 
+            JOptionPane.showMessageDialog(null,
                     " Se ha Modificado Correctamente ",
                     "Proceso Realizado Correctamente",
                     JOptionPane.INFORMATION_MESSAGE);
             estatuto.close();
             conex.desconectar();
-            
-        }catch(SQLException e){
-            
-            JOptionPane.showMessageDialog(null, 
-                    "Error al Modificar: \n"+e,
-                    "Error",JOptionPane.ERROR_MESSAGE);
+
+        } catch (SQLException e) {
+
+            JOptionPane.showMessageDialog(null,
+                    "Error al Modificar: \n" + e,
+                    "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
-    
-    
+
 }

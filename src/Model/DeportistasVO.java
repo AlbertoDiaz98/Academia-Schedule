@@ -10,14 +10,15 @@ package Model;
  * @author beto-
  */
 public class DeportistasVO {
+
     private int idDep;
-    private String nombreDep ; 
-    private String apPaDep; 
-    private String apMaDep; 
-    private String generoDep; 
-    private String dia; 
+    private String nombreDep;
+    private String apPaDep;
+    private String apMaDep;
+    private String generoDep;
+    private String dia;
     private String mes;
-    private String año; 
+    private String año;
     private String deporte;
 
     public int getIdDep() {
@@ -91,6 +92,5 @@ public class DeportistasVO {
     public void setDeporte(String deporte) {
         this.deporte = deporte;
     }
-    
-    
+
 }
