@@ -272,8 +272,6 @@ public class vAgregarDeportista extends javax.swing.JFrame {
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         // TODO add your handling code here:
-        vAgregarDoctor ven = new vAgregarDoctor();
-        ven.setVisible(true);
     }//GEN-LAST:event_btnVolverActionPerformed
 
     /**
