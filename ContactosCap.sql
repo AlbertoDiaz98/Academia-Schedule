@@ -22,23 +22,23 @@ create table Persona (idPers int primary key, nombrePers varchar(20), apPaPers v
 medContacPref varchar(20), ocupacion varchar(20));
  
 //Tabla Medios de contacto para Deportista// 
-create table MediosDeContactoDep (mediContacDep varchar(2000),idMediContacDep int primary key, idDep int, 
+create table MediosDeContactoDep ( CelDep varchar(2000),TelCasaDep varchar(2000), CorreoDep varchar(2000) ,idMediContacDep int primary key, idDep int, 
 foreign key (idDep) references Deportista(idDep));
 
 //Tabla Medios de contacto para Doctor//                                          
-create table MediosDeContactoDoc (mediContacDoc varchar(2000),idMediContacDoc int primary key, idDoc int, 
+create table MediosDeContactoDoc ( CelDoc varchar(2000), TelCasaDoc varchar(2000), CorreoDoc varchar(2000), idMediContacDoc int primary key, idDoc int, 
 foreign key (idDoc) references Doctor(idDoc));
 
 //Tabla de Medios de contacto para Estudiante//                                      
-create table MediosDeContactoEstu (mediContacEstu varchar(2000),idMediContacEstu int primary key, idEstu int,
+create table MediosDeContactoEstu ( CelEstu varchar(2000), TelCasaEstu varchar(2000), CorreoEstu varchar(2000), idMediContacEstu int primary key, idEstu int,
 foreign key (idEstu) references Estudiante(idEstu));
  
 //Tabla de Medios de contacto para Licenciado//                                           
-create table MediosDeContactoLic (mediContacLic varchar(2000),idMediContacLic int primary key, idLic int,
+create table MediosDeContactoLic ( CelLic varchar(2000), TelCasaLic varchar(2000), CorreoLic varchar(2000), idMediContacLic int primary key, idLic int,
 foreign key (idLic) references Licenciado(idLic));
 
 //Tabla para Medios de contacto para Persona//                                          
-create table MediosDeContactoPers (mediContacPers varchar(2000),idMediContacPers int primary key, idPers int,
+create table MediosDeContactoPers ( CelPers varchar(2000), TelCasaPers varchar(2000), CorreoPers varchar(2000), idMediContacPers int primary key, idPers int,
 foreign key (idPers) references Persona(idPers));
                                         
 
