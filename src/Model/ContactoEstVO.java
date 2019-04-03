@@ -20,7 +20,7 @@ public class ContactoEstVO {
         return NumCelularEst;
     }
 
-    public void setNumCalularEst(String NumCalularEst) {
+    public void setNumCelularEst(String NumCalularEst) {
         this.NumCelularEst = NumCalularEst;
     }
 

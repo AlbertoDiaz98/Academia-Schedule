@@ -42,8 +42,8 @@ public class ContactoDepDAO {
     }
         
          public ContactoDepVO buscarPersona(int codigo){
-        Connection conex= new Connection();
-        ContactoDepVO personFound= new ContactoDepVO();
+        
+        ContactoDepVO contactFound= new ContactoDepVO();
 	boolean existe=false;
 	try{
             PreparedStatement consulta;
@@ -53,9 +53,9 @@ public class ContactoDepDAO {
             ResultSet res = consulta.executeQuery();
             while(res.next()){
                 existe=true;
-                personFound.setNumCelularDep(res.getString("CelDep"));
-		personFound.setNumCasaDep(res.getString("TelCasaDep"));
-		personFound.setCorreoDep(res.getString("CorreoDep"));
+                contactFound.setNumCelularDep(res.getString("CelDep"));
+		contactFound.setNumCasaDep(res.getString("TelCasaDep"));
+		contactFound.setCorreoDep(res.getString("CorreoDep"));
 		
             }
             consulta.close();
@@ -65,10 +65,25 @@ public class ContactoDepDAO {
             JOptionPane.showMessageDialog(null,"Error: \n"+e);	}
         
 	if (existe) {
-            return personFound;
+            return contactFound;
 	} else return null;				
     }
    
+ public void eliminarContactos(int code) {
+        
+        try {
+
+            est = conex.getConnection().prepareStatement("DELETE FROM MediosDeContactoDep"
+                    + "WHERE idDep = ?");
+            est.setInt(1, code);
+            est.execute();
+            est.close();
+            conex.desconectar();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al eliminar Contactos: \n" + e);
+        }
+    }
         
     
     
