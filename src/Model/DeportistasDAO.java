@@ -84,7 +84,7 @@ public class DeportistasDAO {
 	try{
             
             est=conex.getConnection().prepareStatement("DELETE FROM Deportista "
-                    + "WHERE id = ?");            
+                    + "WHERE idDep = ?");            
             est.setInt(1, code);
             est.execute();
             JOptionPane.showMessageDialog(null,
@@ -98,5 +98,40 @@ public class DeportistasDAO {
             JOptionPane.showMessageDialog(null, "Error al eliminar dator: \n"+e);
 	}
     }
+    
+    public void modificarPersona(DeportistasVO deportista){
+	try{
+            String consulta="UPDATE persona SET idDep= ? "
+                    + ",nombreDep = ? , apPaDep=? , apMaDep=? , generoDep=? "
+                    + ", dia= ? , mes= ?, año= ? , deporte= ? WHERE idDep=? ";
+            PreparedStatement estatuto;
+            estatuto = conex.getConnection().prepareStatement(consulta);
+			
+            estatuto.setInt(1, deportista.getIdDep());
+            estatuto.setString(2, deportista.getNombreDep());
+            estatuto.setString(3, deportista.getApPaDep());
+            estatuto.setString(4, deportista.getApMaDep());
+            estatuto.setString(5, deportista.getGeneroDep());
+            estatuto.setString(6, deportista.getDia());
+            estatuto.setString(7, deportista.getMes());
+            estatuto.setString(8, deportista.getAño());
+            estatuto.setString(9, deportista.getDeporte());
+            estatuto.executeUpdate();
+
+            JOptionPane.showMessageDialog(null, 
+                    " Se ha Modificado Correctamente ",
+                    "Proceso Realizado Correctamente",
+                    JOptionPane.INFORMATION_MESSAGE);
+            estatuto.close();
+            conex.desconectar();
+            
+        }catch(SQLException e){
+            
+            JOptionPane.showMessageDialog(null, 
+                    "Error al Modificar: \n"+e,
+                    "Error",JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
     
 }
