@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -16,6 +17,10 @@ import javax.swing.JOptionPane;
  */
 public class ContactoDocDAO {Connection conex= new Connection();
         PreparedStatement est;
+        ShowContacts sw = new ShowContacts();
+        DefaultTableModel contactoDoc= new DefaultTableModel();        
+        
+        
         
         public void addContact(ContactoDocVO conDoctor, DoctorVO doctor){
 
@@ -83,7 +88,18 @@ public class ContactoDocDAO {Connection conex= new Connection();
         }
     }
    
+  public DefaultTableModel mostrarContactosDoc(){
+	try{
+            contactoDoc= sw.mostrarContactos("Doc");
+        }catch (Exception e){
+           JOptionPane.showMessageDialog(null, "Error, no se pudo recuperar Datos");
+	}
+        return contactoDoc;
+    }
+  
+ 
+ 
     
-    
+   
     
 }

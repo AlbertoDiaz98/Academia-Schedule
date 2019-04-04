@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -18,6 +19,8 @@ public class ContactoPerDAO {
 
     Connection conex = new Connection();
     PreparedStatement est;
+            ShowContacts sw = new ShowContacts();
+        DefaultTableModel contactoPer= new DefaultTableModel();      
 
     public void addContact(ContactoPerVO conPersona, PersonaVO persona) {
         try {
@@ -86,4 +89,15 @@ public class ContactoPerDAO {
         }
     }
 
+    public DefaultTableModel mostrarContactosPer(){
+	try{
+            contactoPer= sw.mostrarContactos("Per");
+        }catch (Exception e){
+           JOptionPane.showMessageDialog(null, "Error, no se pudo recuperar Datos");
+	}
+        return contactoPer;
+    }
+
+    
+    
 }

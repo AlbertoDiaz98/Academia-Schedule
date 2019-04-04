@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -136,4 +137,56 @@ public class DoctorDAO {
         }
     }
 
+    
+      
+    public DefaultTableModel mostrarDatosDoc(){
+    
+     DefaultTableModel tablaDoc = new DefaultTableModel();
+     boolean existe=false;
+	try{
+            
+            
+            PreparedStatement consulta;
+            consulta = conex.getConnection().prepareStatement(
+                    "SELECT * FROM Doctor"+ "");
+            
+            
+            ResultSet res = consulta.executeQuery();
+            tablaDoc.addColumn("Id");
+            tablaDoc.addColumn("Nombre");
+            tablaDoc.addColumn("Apellido Paterno ");
+            tablaDoc.addColumn("Apellido Materno");
+            tablaDoc.addColumn("Genero");
+            tablaDoc.addColumn("Dia de Nacimiento");
+            tablaDoc.addColumn("Mes de Nacimiento");
+            tablaDoc.addColumn("Año de Nacimiento");
+            tablaDoc.addColumn("Especialidad");
+            tablaDoc.addColumn("Hospital");
+            tablaDoc.addColumn("Direccion");
+
+// Bucle para cada resultado en la consulta
+while (res.next())
+{
+   
+   Object [] fila = new Object[10]; 
+
+   
+   for (int i=0;i<10;i++)
+      fila[i] = res.getObject(i+1); 
+
+   
+   tablaDoc.addRow(fila); 
+}
+
+           
+        }catch (SQLException e){
+           JOptionPane.showMessageDialog(null, "Error, no se pudo recuperar Datos");
+            
+	}
+       
+        return tablaDoc;
+        
+    }
+  
+    
 }

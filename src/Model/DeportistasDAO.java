@@ -134,7 +134,7 @@ public class DeportistasDAO {
         }
     }
 
-     public DefaultTableModel mostrarContactosDep(){
+     public DefaultTableModel mostrarDatosDep(){
     
      DefaultTableModel tablaDep = new DefaultTableModel();
      boolean existe=false;
@@ -165,7 +165,7 @@ while (res.next())
    Object [] fila = new Object[9]; 
 
    
-   for (int i=0;i<6;i++)
+   for (int i=0;i<9;i++)
       fila[i] = res.getObject(i+1); 
 
    
@@ -175,7 +175,7 @@ while (res.next())
            
         }catch (SQLException e){
             JOptionPane.showMessageDialog(null, "Error, no se conectó");
-            System.out.println(e);
+            
 	}
        
         return tablaDep;

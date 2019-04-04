@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -136,4 +137,56 @@ public class EstudianteDAO {
         }
     }
 
+    
+     public DefaultTableModel mostrarDatosEstu(){
+    
+     DefaultTableModel tablaEstu = new DefaultTableModel();
+     boolean existe=false;
+	try{
+            
+            
+            PreparedStatement consulta;
+            consulta = conex.getConnection().prepareStatement(
+                    "SELECT * FROM Estudiante"+ "");
+            
+            
+            ResultSet res = consulta.executeQuery();
+            tablaEstu.addColumn("Id");
+            tablaEstu.addColumn("Nombre");
+            tablaEstu.addColumn("Apellido Paterno ");
+            tablaEstu.addColumn("Apellido Materno");
+            tablaEstu.addColumn("Lugar de nacimiento");
+            tablaEstu.addColumn("Dia de Nacimiento");
+            tablaEstu.addColumn("Mes de Nacimiento");
+            tablaEstu.addColumn("Año de Nacimiento");
+            tablaEstu.addColumn("Carrera");
+            tablaEstu.addColumn("Email");
+            
+
+// Bucle para cada resultado en la consulta
+while (res.next())
+{
+   
+   Object [] fila = new Object[9]; 
+
+   
+   for (int i=0;i<9;i++)
+      fila[i] = res.getObject(i+1); 
+
+   
+   tablaEstu.addRow(fila); 
+}
+
+           
+        }catch (SQLException e){
+           JOptionPane.showMessageDialog(null, "Error, no se pudo recuperar Datos");
+            
+	}
+       
+        return tablaEstu;
+        
+    }
+  
+    
+    
 }

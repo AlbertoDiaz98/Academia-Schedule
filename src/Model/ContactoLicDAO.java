@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -18,6 +19,8 @@ public class ContactoLicDAO {
     
     Connection conex= new Connection();
         PreparedStatement est;
+        ShowContacts sw = new ShowContacts();
+        DefaultTableModel contactoLic= new DefaultTableModel();      
         
         public void addContact(ContactoLicVO conLic, LicenciadoVO licenciado){
 
@@ -84,6 +87,14 @@ public class ContactoLicDAO {
             JOptionPane.showMessageDialog(null, "Error al eliminar Contactos: \n" + e);
         }
     }
-    
-    
+ 
+public DefaultTableModel mostrarContactosLic(){
+	try{
+            contactoLic= sw.mostrarContactos("Lic");
+        }catch (Exception e){
+           JOptionPane.showMessageDialog(null, "Error, no se pudo recuperar Datos");
+	}
+        return contactoLic;
+    }
+
 }
