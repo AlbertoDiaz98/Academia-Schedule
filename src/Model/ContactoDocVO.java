@@ -16,7 +16,7 @@ public class ContactoDocVO {
     private String CorreoDoc;
     private String idContactoDoc;
     
-    public String getNumCalularDoc() {
+    public String getNumCelularDoc() {
         return NumCelularDoc;
     }
 

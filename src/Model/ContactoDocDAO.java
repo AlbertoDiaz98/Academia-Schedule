@@ -22,12 +22,12 @@ public class ContactoDocDAO {Connection conex= new Connection();
 	try{
                 est = conex.getConnection().prepareStatement("Call"
                         + " insert_into_MediosDeContactoDoc (?,?,?,?,?,?)");
-                est.setString(1, conDoctor.getNumCalularDoc());
-                est.setString(2, conEstudiante.getNumCasaEst());
-                est.setString(3, conEstudiante.getCorreoEst());
-                est.setString(4, estudiante.getNombreEstu());
-                est.setString(5, estudiante.getApPaEstu());
-                est.setString(6, estudiante.getApMaEstu());
+                est.setString(1, conDoctor.getNumCelularDoc());
+                est.setString(2, conDoctor.getNumCasaDoc());
+                est.setString(3, conDoctor.getCorreoDoc());
+                est.setString(4, doctor.getNombreDoc());
+                est.setString(5, doctor.getApPaDoc());
+                est.setString(6, doctor.getApMaDoc());
                 est.executeUpdate();
 		est.close();
                 conex.desconectar();
@@ -39,21 +39,21 @@ public class ContactoDocDAO {Connection conex= new Connection();
         }
     }
         
-         public ContactoEstVO buscarEstuante(int codigo){
+         public ContactoDocVO buscarDoctor(int codigo){
         
-        ContactoEstVO contactFound= new ContactoEstVO();
+        ContactoDocVO contactFound= new ContactoDocVO();
 	boolean existe=false;
 	try{
             PreparedStatement consulta;
             consulta = conex.getConnection().prepareStatement(
-                    "SELECT * FROM MediosDeContactoEst where idDep = ? ");
+                    "SELECT * FROM MediosDeContactoDoc where idDoc = ? ");
             consulta.setInt(1, codigo);
             ResultSet res = consulta.executeQuery();
             while(res.next()){
                 existe=true;
-                contactFound.setNumCelularEst(res.getString("CelEst"));
-		contactFound.setNumCasaEst(res.getString("TelCasaEst"));
-		contactFound.setCorreoEst(res.getString("CorreoEst"));
+                contactFound.setNumCelularDoc(res.getString("CelDoc"));
+		contactFound.setNumCasaDoc(res.getString("TelCasaDoc"));
+		contactFound.setCorreoDoc(res.getString("CorreoDoc"));
 		
             }
             consulta.close();
@@ -71,8 +71,8 @@ public class ContactoDocDAO {Connection conex= new Connection();
         
         try {
 
-            est = conex.getConnection().prepareStatement("DELETE FROM MediosDeContactoEst"
-                    + "WHERE idEst = ?");
+            est = conex.getConnection().prepareStatement("DELETE FROM MediosDeContactoDoc"
+                    + "WHERE idDoc = ?");
             est.setInt(1, code);
             est.execute();
             est.close();
