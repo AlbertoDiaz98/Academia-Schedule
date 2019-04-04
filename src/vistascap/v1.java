@@ -239,11 +239,11 @@ public class v1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnDeportista;
-    private javax.swing.JButton btnDoctor;
-    private javax.swing.JButton btnEstudiante;
-    private javax.swing.JButton btnLicenciado;
-    private javax.swing.JButton btnPersona;
+    public javax.swing.JButton btnDeportista;
+    public javax.swing.JButton btnDoctor;
+    public javax.swing.JButton btnEstudiante;
+    public javax.swing.JButton btnLicenciado;
+    public javax.swing.JButton btnPersona;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
