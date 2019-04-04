@@ -40,6 +40,7 @@ public class v1 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(55, 94, 151));
         jPanel1.setLayout(null);
@@ -48,11 +49,13 @@ public class v1 extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Contactos");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(300, 20, 243, 60);
+        jLabel1.setBounds(330, 20, 243, 60);
 
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(jSeparator1);
-        jSeparator1.setBounds(10, 90, 800, 20);
+        jSeparator1.setBounds(10, 90, 850, 20);
+
+        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 99));
 
         btnDeportista.setBackground(new java.awt.Color(255, 255, 255));
         btnDeportista.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -67,6 +70,7 @@ public class v1 extends javax.swing.JFrame {
                 btnDeportistaActionPerformed(evt);
             }
         });
+        jPanel3.add(btnDeportista, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 152, 205));
 
         btnDoctor.setBackground(new java.awt.Color(255, 255, 255));
         btnDoctor.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -81,6 +85,7 @@ public class v1 extends javax.swing.JFrame {
                 btnDoctorActionPerformed(evt);
             }
         });
+        jPanel3.add(btnDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 152, 205));
 
         btnEstudiante.setBackground(new java.awt.Color(255, 255, 255));
         btnEstudiante.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -95,6 +100,7 @@ public class v1 extends javax.swing.JFrame {
                 btnEstudianteActionPerformed(evt);
             }
         });
+        jPanel3.add(btnEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, 152, 205));
 
         btnLicenciado.setBackground(new java.awt.Color(255, 255, 255));
         btnLicenciado.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -109,6 +115,7 @@ public class v1 extends javax.swing.JFrame {
                 btnLicenciadoActionPerformed(evt);
             }
         });
+        jPanel3.add(btnLicenciado, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 150, 152, 205));
 
         btnPersona.setBackground(new java.awt.Color(255, 255, 255));
         btnPersona.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -124,59 +131,17 @@ public class v1 extends javax.swing.JFrame {
                 btnPersonaActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(183, 183, 183)
-                .addComponent(btnDeportista, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(142, 142, 142)
-                .addComponent(btnDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(btnEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE)
-                .addComponent(btnPersona, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(105, 105, 105)
-                .addComponent(btnLicenciado, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(63, 63, 63))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnDeportista, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(btnPersona, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(btnEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(199, 199, 199))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(btnLicenciado, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
-        );
+        jPanel3.add(btnPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 150, 152, 205));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 878, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

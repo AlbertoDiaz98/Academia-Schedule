@@ -28,99 +28,113 @@ public class vContactosEstudiante extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
-        jLabel2 = new javax.swing.JLabel();
-        btnAgregar = new javax.swing.JButton();
-        btnEliminar = new javax.swing.JButton();
-        btnModificar = new javax.swing.JButton();
-        btnBuscar = new javax.swing.JButton();
-        btnVolver = new javax.swing.JButton();
+        btnBuscarEstu = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel2 = new javax.swing.JLabel();
+        btnAgregarEstu = new javax.swing.JButton();
+        btnEliminarEstu = new javax.swing.JButton();
+        btnModificarEstu = new javax.swing.JButton();
+        btnVolver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(55, 94, 151));
-        jPanel2.setLayout(null);
+        btnBuscarEstu.setBackground(new java.awt.Color(255, 255, 255));
+        btnBuscarEstu.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        btnBuscarEstu.setForeground(new java.awt.Color(55, 94, 151));
+        btnBuscarEstu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistascap/img/find-my-friend.png"))); // NOI18N
+        btnBuscarEstu.setBorder(null);
+        btnBuscarEstu.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        btnBuscarEstu.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnBuscarEstu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarEstuActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnBuscarEstu, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 90, 64, 51));
 
-        jLabel8.setFont(new java.awt.Font("Century Gothic", 0, 48)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Contactos");
-        jPanel2.add(jLabel8);
-        jLabel8.setBounds(300, 20, 243, 60);
+        jLabel3.setBackground(new java.awt.Color(0, 102, 102));
+        jLabel3.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(55, 94, 151));
+        jLabel3.setText("ID: ");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 110, -1, -1));
+
+        txtNombre.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        txtNombre.setBorder(null);
+        jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 110, 72, -1));
+
+        jSeparator2.setBackground(new java.awt.Color(0, 102, 102));
+        jSeparator2.setForeground(new java.awt.Color(55, 94, 151));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 130, 72, 20));
+
+        jPanel3.setBackground(new java.awt.Color(55, 94, 151));
+        jPanel3.setLayout(null);
+
+        jLabel4.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Contactos");
+        jPanel3.add(jLabel4);
+        jLabel4.setBounds(280, 20, 200, 45);
 
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel2.add(jSeparator1);
-        jSeparator1.setBounds(10, 90, 800, 20);
+        jPanel3.add(jSeparator1);
+        jSeparator1.setBounds(10, 70, 700, 20);
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 823, 100));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 80));
 
         jLabel2.setBackground(new java.awt.Color(0, 102, 102));
-        jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(55, 94, 151));
         jLabel2.setText("Contactos Estudiantes");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 118, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
 
-        btnAgregar.setBackground(new java.awt.Color(255, 255, 255));
-        btnAgregar.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        btnAgregar.setForeground(new java.awt.Color(55, 94, 151));
-        btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistascap/img/add-contact.png"))); // NOI18N
-        btnAgregar.setText("Agregar");
-        btnAgregar.setBorder(null);
-        btnAgregar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregarEstu.setBackground(new java.awt.Color(255, 255, 255));
+        btnAgregarEstu.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        btnAgregarEstu.setForeground(new java.awt.Color(55, 94, 151));
+        btnAgregarEstu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistascap/img/add-contact.png"))); // NOI18N
+        btnAgregarEstu.setText("Agregar");
+        btnAgregarEstu.setBorder(null);
+        btnAgregarEstu.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnAgregarEstu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregarActionPerformed(evt);
+                btnAgregarEstuActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 753, 137, 56));
+        jPanel1.add(btnAgregarEstu, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 610, 137, 56));
 
-        btnEliminar.setBackground(new java.awt.Color(255, 255, 255));
-        btnEliminar.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        btnEliminar.setForeground(new java.awt.Color(55, 94, 151));
-        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistascap/img/rubbish-bin.png"))); // NOI18N
-        btnEliminar.setText("Eliminar");
-        btnEliminar.setBorder(null);
-        btnEliminar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminarEstu.setBackground(new java.awt.Color(255, 255, 255));
+        btnEliminarEstu.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        btnEliminarEstu.setForeground(new java.awt.Color(55, 94, 151));
+        btnEliminarEstu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistascap/img/rubbish-bin.png"))); // NOI18N
+        btnEliminarEstu.setText("Eliminar");
+        btnEliminarEstu.setBorder(null);
+        btnEliminarEstu.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnEliminarEstu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarActionPerformed(evt);
+                btnEliminarEstuActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 753, 137, 56));
+        jPanel1.add(btnEliminarEstu, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 610, 137, 56));
 
-        btnModificar.setBackground(new java.awt.Color(255, 255, 255));
-        btnModificar.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        btnModificar.setForeground(new java.awt.Color(55, 94, 151));
-        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistascap/img/progress-arrows.png"))); // NOI18N
-        btnModificar.setText("Modificar");
-        btnModificar.setBorder(null);
-        btnModificar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnModificar.addActionListener(new java.awt.event.ActionListener() {
+        btnModificarEstu.setBackground(new java.awt.Color(255, 255, 255));
+        btnModificarEstu.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        btnModificarEstu.setForeground(new java.awt.Color(55, 94, 151));
+        btnModificarEstu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistascap/img/progress-arrows.png"))); // NOI18N
+        btnModificarEstu.setText("Modificar");
+        btnModificarEstu.setBorder(null);
+        btnModificarEstu.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnModificarEstu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnModificarActionPerformed(evt);
+                btnModificarEstuActionPerformed(evt);
             }
         });
-        jPanel1.add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(254, 753, 137, 56));
-
-        btnBuscar.setBackground(new java.awt.Color(255, 255, 255));
-        btnBuscar.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        btnBuscar.setForeground(new java.awt.Color(55, 94, 151));
-        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistascap/img/find-my-friend.png"))); // NOI18N
-        btnBuscar.setBorder(null);
-        btnBuscar.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        btnBuscar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 118, 64, 51));
+        jPanel1.add(btnModificarEstu, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 610, 137, 56));
 
         btnVolver.setBackground(new java.awt.Color(255, 255, 255));
         btnVolver.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -134,51 +148,37 @@ public class vContactosEstudiante extends javax.swing.JFrame {
                 btnVolverActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(733, 749, 80, 60));
-
-        jLabel3.setBackground(new java.awt.Color(0, 102, 102));
-        jLabel3.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(55, 94, 151));
-        jLabel3.setText("ID: ");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 140, -1, -1));
-
-        txtNombre.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        txtNombre.setBorder(null);
-        jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 140, 72, -1));
-
-        jSeparator2.setBackground(new java.awt.Color(0, 102, 102));
-        jSeparator2.setForeground(new java.awt.Color(55, 94, 151));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 160, 72, 20));
+        jPanel1.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 610, 80, 60));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 681, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+    private void btnBuscarEstuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarEstuActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnAgregarActionPerformed
+    }//GEN-LAST:event_btnBuscarEstuActionPerformed
 
-    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+    private void btnAgregarEstuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarEstuActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnEliminarActionPerformed
+    }//GEN-LAST:event_btnAgregarEstuActionPerformed
 
-    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+    private void btnEliminarEstuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarEstuActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnModificarActionPerformed
+    }//GEN-LAST:event_btnEliminarEstuActionPerformed
 
-    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+    private void btnModificarEstuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarEstuActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnBuscarActionPerformed
+    }//GEN-LAST:event_btnModificarEstuActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         // TODO add your handling code here:
@@ -220,16 +220,16 @@ public class vContactosEstudiante extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAgregar;
-    private javax.swing.JButton btnBuscar;
-    private javax.swing.JButton btnEliminar;
-    private javax.swing.JButton btnModificar;
+    private javax.swing.JButton btnAgregarEstu;
+    private javax.swing.JButton btnBuscarEstu;
+    private javax.swing.JButton btnEliminarEstu;
+    private javax.swing.JButton btnModificarEstu;
     public javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     public javax.swing.JTextField txtNombre;
