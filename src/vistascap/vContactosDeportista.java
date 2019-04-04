@@ -40,6 +40,10 @@ public class vContactosDeportista extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tb2Dep = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tb1Dep = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -86,7 +90,7 @@ public class vContactosDeportista extends javax.swing.JFrame {
                 btnModificarDepActionPerformed(evt);
             }
         });
-        jPanel1.add(btnModificarDep, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 610, 137, 56));
+        jPanel1.add(btnModificarDep, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 610, 137, 56));
 
         btnBuscarDep.setBackground(new java.awt.Color(255, 255, 255));
         btnBuscarDep.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -150,6 +154,36 @@ public class vContactosDeportista extends javax.swing.JFrame {
         jSeparator1.setBounds(10, 70, 700, 20);
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 80));
+
+        tb2Dep.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(tb2Dep);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 200, 350, 380));
+
+        tb1Dep.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(tb1Dep);
+
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 300, 380));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 680));
 
@@ -222,8 +256,12 @@ public class vContactosDeportista extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    public javax.swing.JTable tb1Dep;
+    public javax.swing.JTable tb2Dep;
     public javax.swing.JTextField txtIDDep;
     // End of variables declaration//GEN-END:variables
 }

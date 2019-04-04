@@ -40,6 +40,10 @@ public class vContactosDoctor extends javax.swing.JFrame {
         btnEliminarDoc = new javax.swing.JButton();
         btnModificarDoc = new javax.swing.JButton();
         btnVolver = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tb2Doc = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tb1Doc = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -134,7 +138,7 @@ public class vContactosDoctor extends javax.swing.JFrame {
                 btnModificarDocActionPerformed(evt);
             }
         });
-        jPanel1.add(btnModificarDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 610, 137, 56));
+        jPanel1.add(btnModificarDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 610, 137, 56));
 
         btnVolver.setBackground(new java.awt.Color(255, 255, 255));
         btnVolver.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -149,6 +153,36 @@ public class vContactosDoctor extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 610, 80, 60));
+
+        tb2Doc.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(tb2Doc);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 200, 350, 380));
+
+        tb1Doc.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(tb1Doc);
+
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 300, 380));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -234,8 +268,12 @@ public class vContactosDoctor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    public javax.swing.JTable tb1Doc;
+    public javax.swing.JTable tb2Doc;
     public javax.swing.JTextField txtIDDoc;
     // End of variables declaration//GEN-END:variables
 }
