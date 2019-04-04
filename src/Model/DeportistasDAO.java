@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -133,4 +134,55 @@ public class DeportistasDAO {
         }
     }
 
+     public DefaultTableModel mostrarContactosDep(){
+    
+     DefaultTableModel tablaDep = new DefaultTableModel();
+     boolean existe=false;
+	try{
+            
+            
+            PreparedStatement consulta;
+            consulta = conex.getConnection().prepareStatement(
+                    "SELECT * FROM Deportista"
+                            + "");
+            
+            
+            ResultSet res = consulta.executeQuery();
+            tablaDep.addColumn("Id");
+            tablaDep.addColumn("Nombre");
+            tablaDep.addColumn("Apellido Paterno ");
+            tablaDep.addColumn("Apellido Materno");
+            tablaDep.addColumn("Genero");
+            tablaDep.addColumn("Dia de Nacimiento");
+            tablaDep.addColumn("Mes de Nacimiento");
+            tablaDep.addColumn("Año de Nacimiento");
+            tablaDep.addColumn("Deporte que Practica");
+
+// Bucle para cada resultado en la consulta
+while (res.next())
+{
+   
+   Object [] fila = new Object[9]; 
+
+   
+   for (int i=0;i<6;i++)
+      fila[i] = res.getObject(i+1); 
+
+   
+   tablaDep.addRow(fila); 
+}
+
+           
+        }catch (SQLException e){
+            JOptionPane.showMessageDialog(null, "Error, no se conectó");
+            System.out.println(e);
+	}
+       
+        return tablaDep;
+        
+    }
+    
+   
+    
+    
 }
