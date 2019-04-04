@@ -77,7 +77,7 @@ public class Controller implements ActionListener{
         vagregarLicenciado.btnVolver.addActionListener(this);
     }
     private void iniciarPersona(){
-        this.vagregarPersona.btnVolver.setActionCommand("vovlerMenu");
+        this.vagregarPersona.btnVolver.setActionCommand("volverMenu");
         vagregarPersona.btnVolver.addActionListener(this);
     }
     public void go(){
