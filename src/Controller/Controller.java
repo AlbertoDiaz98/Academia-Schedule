@@ -13,7 +13,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JButton;
 import Model.*;
+import java.awt.Rectangle;
+import java.awt.Toolkit;
+import javax.swing.JFrame;
 import vistascap.*;
 /**
  *
@@ -23,6 +27,26 @@ public class Controller implements ActionListener{
     //View packages
     private v1 v1view;
     private Connection connection;
+    private ContactoDepDAO contactoDepDAO;
+    private ContactoDepVO contactoDepVO;
+    private ContactoDocDAO contactoDocDAO;
+    private ContactoDocVO contactoDocVo;
+    private ContactoEstDAO contactoEstDAO;
+    private ContactoEstVO contactoEstVO;
+    private ContactoLicDAO contactoLicDAO;
+    private ContactoLicVO contactoLicVO;
+    private ContactoPerDAO contactoPerDAO;
+    private ContactoPerVO contactoPerVO;
+    private DeportistasDAO deportistasDAO;
+    private DeportistasVO deportistasVO;
+    private DoctorDAO doctorDAO;
+    private DoctorVO doctorVO;
+    private EstudianteDAO estudianteDAO;
+    private EstudianteVO estudianteVO;
+    private LicenciadoDAO licenciadoDAO;
+    private LicenciadoVO licendiadoVO;
+    private PersonaDAO personaDAO;
+    private PersonaVO personaVO;
     private vAgregarDeportista vagregarDeportista;
     private vAgregarDoctor vagregarDoctor;
     private vAgregarEstudiante vagregarEstudiante;
@@ -30,10 +54,22 @@ public class Controller implements ActionListener{
     private vAgregarPersona vagregarPersona;
     private vOptions voption;
     //En el constructor inicializamos nuestros objetos
-    public Controller( v1 view, Connection connection, vAgregarDeportista vaddSportMan, vAgregarDoctor vaddDoctor,vAgregarEstudiante vaddStudent
+    public Controller( v1 view, Connection connection,ContactoDepDAO contactoDepDAO, 
+            ContactoDepVO contactoDepVO, vAgregarDeportista vaddSportMan, ContactoDocDAO contactoDocDAO,
+            ContactoDocVO contactoDocVO, ContactoEstDAO contactoEstDAO, ContactoEstVO contactoEstVO,
+            ContactoLicDAO contactoLicDAO, ContactoLicVO contactoLicVO, ContactoPerDAO contactoPerDAO,
+            ContactoPerVO contactoPerVO, DeportistasDAO deportistasDAO, DeportistasVO deportistasVO,
+            DoctorDAO doctorDAO, DoctorVO doctorVO, EstudianteDAO estudianteDAO, EstudianteVO estudianteVO,
+            LicenciadoDAO licenciadoDAO, LicenciadoVO licendiadoVO, PersonaDAO personaDAO, PersonaVO personaVO,
+           vAgregarDoctor vaddDoctor,vAgregarEstudiante vaddStudent
     , vAgregarLicenciado vaddLicentiate, vAgregarPersona vaddPerson, vOptions voption){
        this.v1view = view;
        this.connection = connection;
+       this.contactoDepDAO = contactoDepDAO;
+       this.contactoDepVO = contactoDepVO;
+       this.contactoDocDAO = contactoDocDAO;
+       this.contactoDocVo = contactoDocVO;
+       this.contactoEstDAO = contactoEstDAO;
        this.vagregarDeportista = vaddSportMan ;
        this.vagregarDoctor = vaddDoctor;
        this.vagregarEstudiante = vaddStudent;
@@ -60,6 +96,10 @@ public class Controller implements ActionListener{
         v1view.btnLicenciado.addActionListener(this);
         v1view.btnPersona.addActionListener(this);
     }
+    public void go(){
+        this.v1view.setVisible(true);
+    }
+
     private void iniciarDeportista(){
         this.vagregarDeportista.btnVolver.setActionCommand("volverMenu");
         vagregarDeportista.btnVolver.addActionListener(this);
@@ -79,9 +119,6 @@ public class Controller implements ActionListener{
     private void iniciarPersona(){
         this.vagregarPersona.btnVolver.setActionCommand("volverMenu");
         vagregarPersona.btnVolver.addActionListener(this);
-    }
-    public void go(){
-        this.v1view.setVisible(true);
     }
     public void closeWindows(){
         this.v1view.setVisible(false);
@@ -111,6 +148,12 @@ public class Controller implements ActionListener{
         }else if(comando.equals("volverMenu")){
             closeWindows();
             this.v1view.setVisible(true);
+        }
+        //database insert, search, add and delete
+        else if(comando.equals("insertarDeportista")){
+            
+            this.contactoDepVO.setCorreoDep(this.vagregarDeportista.txtEmail.getText());
+            this.vagregarDeportista.txtNombre.getText();
         }
     }
 }

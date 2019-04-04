@@ -23,6 +23,26 @@ public class ScheduleProyect {
         // TODO code application logic here
         v1 vista1 = new v1();
         Connection con = new Connection();
+        ContactoDepDAO contactoDepDAO = new ContactoDepDAO();
+        ContactoDepVO contactoDepVO = new ContactoDepVO();
+        ContactoDocDAO contactoDocDAO = new ContactoDocDAO();
+        ContactoDocVO contactoDocVO = new ContactoDocVO();
+        ContactoEstDAO contactoEstDAO = new ContactoEstDAO();
+        ContactoEstVO contactoEstVO = new ContactoEstVO();
+        ContactoLicDAO contactoLicDAO = new ContactoLicDAO();
+        ContactoLicVO contactoLicVO = new ContactoLicVO();
+        ContactoPerDAO contactoPerDAO = new ContactoPerDAO();
+        ContactoPerVO contactoPerVO = new ContactoPerVO();
+        DeportistasDAO deportistasDAO = new DeportistasDAO();
+        DeportistasVO deportistasVO = new DeportistasVO();
+        DoctorDAO doctorDAO = new DoctorDAO();
+        DoctorVO doctorVO = new DoctorVO();
+        EstudianteDAO estudianteDAO = new EstudianteDAO();
+        EstudianteVO estudianteVO = new EstudianteVO();
+        LicenciadoDAO licenciadoDAO = new LicenciadoDAO();
+        LicenciadoVO licenciadoVO = new LicenciadoVO();
+        PersonaDAO personaDAO = new PersonaDAO();
+        PersonaVO personaVO = new PersonaVO();
         vAgregarDeportista vaddSportMan = new vAgregarDeportista();
         vAgregarDoctor vaddDoctor = new vAgregarDoctor();
         vAgregarEstudiante vaddStudent = new vAgregarEstudiante();
@@ -33,7 +53,10 @@ public class ScheduleProyect {
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
             SwingUtilities.updateComponentTreeUI(vista1);
-            new Controller(vista1,con , vaddSportMan, vaddDoctor, vaddStudent, vaddLicentiate, vaddPerson, voption).go();
+            new Controller(vista1,con,contactoDepDAO,contactoDepVO, 
+                vaddSportMan,contactoDocDAO,contactoDocVO,contactoEstDAO,contactoEstVO,contactoLicDAO,
+                    contactoLicVO,contactoPerDAO,contactoPerVO,deportistasDAO,deportistasVO,
+            doctorDAO,doctorVO,estudianteDAO,estudianteVO,licenciadoDAO,licenciadoVO,personaDAO,personaVO, vaddDoctor, vaddStudent, vaddLicentiate, vaddPerson, voption).go();
         } catch (UnsupportedLookAndFeelException ex) {}
           catch (ClassNotFoundException ex) {}
           catch (InstantiationException ex) {}
