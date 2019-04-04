@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -122,5 +123,46 @@ public class LicenciadoDAO {
                     "Error al Modificar: \n" + e,
                     "Error", JOptionPane.ERROR_MESSAGE);
         }
+    }
+
+    public DefaultTableModel mostrarContactosLic() {
+
+        DefaultTableModel tablaLic = new DefaultTableModel();
+        boolean existe = false;
+        try {
+
+            PreparedStatement consulta;
+            consulta = conex.getConnection().prepareStatement(
+                    "SELECT * FROM Licenciado"
+                    + "");
+
+            ResultSet res = consulta.executeQuery();
+            tablaLic.addColumn("Id");
+            tablaLic.addColumn("Nombre");
+            tablaLic.addColumn("Apellido Paterno ");
+            tablaLic.addColumn("Apellido Materno");
+            tablaLic.addColumn("Telefono de Oficina");
+            tablaLic.addColumn("Horarios de Atencion");
+            
+
+// Bucle para cada resultado en la consulta
+            while (res.next()) {
+
+                Object[] fila = new Object[9];
+
+                for (int i = 0; i < 6; i++) {
+                    fila[i] = res.getObject(i + 1);
+                }
+
+                tablaLic.addRow(fila);
+            }
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error, no se conectó");
+            System.out.println(e);
+        }
+
+        return tablaLic;
+
     }
 }

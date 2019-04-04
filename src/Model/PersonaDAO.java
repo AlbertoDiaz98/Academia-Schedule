@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -126,6 +127,47 @@ public class PersonaDAO {
                     "Error al Modificar: \n" + e,
                     "Error", JOptionPane.ERROR_MESSAGE);
         }
+    }
+
+    public DefaultTableModel mostrarContactosPers() {
+
+        DefaultTableModel tablaPers = new DefaultTableModel();
+        boolean existe = false;
+        try {
+
+            PreparedStatement consulta;
+            consulta = conex.getConnection().prepareStatement(
+                    "SELECT * FROM Deportista"
+                    + "");
+
+            ResultSet res = consulta.executeQuery();
+            tablaPers.addColumn("Id");
+            tablaPers.addColumn("Nombre");
+            tablaPers.addColumn("Apellido Paterno ");
+            tablaPers.addColumn("Apellido Materno");
+            tablaPers.addColumn("Domicilio");
+            tablaPers.addColumn("Medio de Contacto Preferido");
+            tablaPers.addColumn("Ocupacion");
+
+// Bucle para cada resultado en la consulta
+            while (res.next()) {
+
+                Object[] fila = new Object[9];
+
+                for (int i = 0; i < 6; i++) {
+                    fila[i] = res.getObject(i + 1);
+                }
+
+                tablaPers.addRow(fila);
+            }
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error, no se conectó");
+            System.out.println(e);
+        }
+
+        return tablaPers;
+
     }
 
 }
