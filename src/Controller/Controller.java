@@ -61,60 +61,56 @@ public class Controller implements ActionListener{
         v1view.btnPersona.addActionListener(this);
     }
     private void iniciarDeportista(){
-        this.vagregarDeportista.btnVolver.setActionCommand("volverMenuDeportista");
+        this.vagregarDeportista.btnVolver.setActionCommand("volverMenu");
         vagregarDeportista.btnVolver.addActionListener(this);
     }
     private void iniciarDoctor(){
-        this.vagregarDoctor.btnVolver.setActionCommand("volverMenuDoctor");
+        this.vagregarDoctor.btnVolver.setActionCommand("volverMenu");
         vagregarDoctor.btnVolver.addActionListener(this);
     }
     private void iniciarEstudiante(){
-        this.vagregarEstudiante.btnVolver.setActionCommand("volverMenuEstudiante");
+        this.vagregarEstudiante.btnVolver.setActionCommand("volverMenu");
         vagregarEstudiante.btnVolver.addActionListener(this);
     }
     private void iniciarLicenciado(){
-        this.vagregarLicenciado.btnVolver.setActionCommand("volverMenuLicenciado");
+        this.vagregarLicenciado.btnVolver.setActionCommand("volverMenu");
         vagregarLicenciado.btnVolver.addActionListener(this);
     }
     private void iniciarPersona(){
-        this.vagregarPersona.btnVolver.setActionCommand("vovlerMenuPersona");
+        this.vagregarPersona.btnVolver.setActionCommand("vovlerMenu");
         vagregarPersona.btnVolver.addActionListener(this);
     }
     public void go(){
         this.v1view.setVisible(true);
     }
+    public void closeWindows(){
+        this.v1view.setVisible(false);
+        this.vagregarDeportista.setVisible(false);
+        this.vagregarDoctor.setVisible(false);
+        this.vagregarEstudiante.setVisible(false);
+        this.vagregarLicenciado.setVisible(false);
+        this.vagregarPersona.setVisible(false);
+    }
     public void actionPerformed(ActionEvent e){
         String comando = e.getActionCommand();
         if(comando.equals("openSportmanView")){
+            closeWindows();
             this.vagregarDeportista.setVisible(true);
-            this.v1view.setVisible(false);
         }else if(comando.equals("openDoctorView")){
+            closeWindows();
             this.vagregarDoctor.setVisible(true);
-            this.v1view.setVisible(false);
         }else if(comando.equals("openStudentView")){
+            closeWindows();
             this.vagregarEstudiante.setVisible(true);
-            this.v1view.setVisible(false);
         }else if(comando.equals("openLicentiateView")){
+            closeWindows();
             this.vagregarLicenciado.setVisible(true);
-            this.v1view.setVisible(false);
         }else if(comando.equals("openPersonView")){
+            closeWindows();
             this.vagregarPersona.setVisible(true);
-            this.v1view.setVisible(false);
-        }else if(comando.equals("volverMenuDeportista")){
+        }else if(comando.equals("volverMenu")){
+            closeWindows();
             this.v1view.setVisible(true);
-            this.vagregarDeportista.setVisible(false);
-        }else if(comando.equals("volverMenuDoctor")){
-            this.v1view.setVisible(true);
-            this.vagregarDeportista.setVisible(false);
-        }else if(comando.equals("volverMenuEstudiante")){
-            this.v1view.setVisible(true);
-            this.vagregarEstudiante.setVisible(false);
-        }else if(comando.equals("volverMenuLicenciado")){
-            this.v1view.setVisible(true);
-            this.vagregarLicenciado.setVisible(false);
-        }else if(comando.equals("vovlerMenuPersona")){
-            this.v1view.setVisible(true);
-            this.vagregarPersona.setVisible(false);
         }
     }
 }
