@@ -220,10 +220,10 @@ public class vContactosEstudiante extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAgregarEstu;
-    private javax.swing.JButton btnBuscarEstu;
-    private javax.swing.JButton btnEliminarEstu;
-    private javax.swing.JButton btnModificarEstu;
+    public javax.swing.JButton btnAgregarEstu;
+    public javax.swing.JButton btnBuscarEstu;
+    public javax.swing.JButton btnEliminarEstu;
+    public javax.swing.JButton btnModificarEstu;
     public javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

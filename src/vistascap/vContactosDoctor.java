@@ -224,10 +224,10 @@ public class vContactosDoctor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAgregarDoc;
-    private javax.swing.JButton btnBuscarDoc;
-    private javax.swing.JButton btnEliminarDoc;
-    private javax.swing.JButton btnModificarDoc;
+    public javax.swing.JButton btnAgregarDoc;
+    public javax.swing.JButton btnBuscarDoc;
+    public javax.swing.JButton btnEliminarDoc;
+    public javax.swing.JButton btnModificarDoc;
     public javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -320,8 +320,8 @@ public class vAgregarLicenciado extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAgregar;
-    private javax.swing.JButton btnModificar;
+    public javax.swing.JButton btnAgregar;
+    public javax.swing.JButton btnModificar;
     public javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;

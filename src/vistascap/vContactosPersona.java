@@ -203,10 +203,10 @@ public class vContactosPersona extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAgregarPer;
-    private javax.swing.JButton btnBuscarPer;
-    private javax.swing.JButton btnEliminarPer;
-    private javax.swing.JButton btnModificarPer;
+    public javax.swing.JButton btnAgregarPer;
+    public javax.swing.JButton btnBuscarPer;
+    public javax.swing.JButton btnEliminarPer;
+    public javax.swing.JButton btnModificarPer;
     public javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

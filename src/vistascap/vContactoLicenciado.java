@@ -224,10 +224,10 @@ public class vContactoLicenciado extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAgregarLic;
-    private javax.swing.JButton btnBuscarLic;
-    private javax.swing.JButton btnEliminarLic;
-    private javax.swing.JButton btnModificarLic;
+    public javax.swing.JButton btnAgregarLic;
+    public javax.swing.JButton btnBuscarLic;
+    public javax.swing.JButton btnEliminarLic;
+    public javax.swing.JButton btnModificarLic;
     public javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

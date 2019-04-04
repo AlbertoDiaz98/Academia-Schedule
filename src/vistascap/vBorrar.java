@@ -171,7 +171,7 @@ public class vBorrar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnEliminar;
+    public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnVolver;
     public javax.swing.JComboBox cBoxGenero;
     private javax.swing.JLabel jLabel1;

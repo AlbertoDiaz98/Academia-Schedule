@@ -337,8 +337,8 @@ public class vAgregarDeportista extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAgregar;
-    private javax.swing.JButton btnModificar;
+    public javax.swing.JButton btnAgregar;
+    public javax.swing.JButton btnModificar;
     public javax.swing.JButton btnVolver;
     public javax.swing.JComboBox cBoxAño;
     public javax.swing.JComboBox cBoxDeporte;

@@ -212,10 +212,10 @@ public class vContactosDeportista extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAgregarDep;
-    private javax.swing.JButton btnBuscarDep;
-    private javax.swing.JButton btnEliminarDep;
-    private javax.swing.JButton btnModificarDep;
+    public javax.swing.JButton btnAgregarDep;
+    public javax.swing.JButton btnBuscarDep;
+    public javax.swing.JButton btnEliminarDep;
+    public javax.swing.JButton btnModificarDep;
     public javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
