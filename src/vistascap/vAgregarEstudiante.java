@@ -471,7 +471,7 @@ public class vAgregarEstudiante extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnVolver;
+    public javax.swing.JButton btnVolver;
     private javax.swing.JComboBox cBoxAño;
     private javax.swing.JComboBox cBoxDia;
     private javax.swing.JComboBox cBoxEspecialidad;
