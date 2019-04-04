@@ -359,10 +359,10 @@ public class vAgregarDoctor extends javax.swing.JFrame {
     public javax.swing.JButton btnAgregar;
     public javax.swing.JButton btnModificar;
     public javax.swing.JButton btnVolver;
-    private javax.swing.JComboBox cBoxAño;
-    private javax.swing.JComboBox cBoxDia;
-    private javax.swing.JComboBox cBoxEspecialidad;
-    private javax.swing.JComboBox cBoxMes;
+    public javax.swing.JComboBox cBoxAño;
+    public javax.swing.JComboBox cBoxDia;
+    public javax.swing.JComboBox cBoxEspecialidad;
+    public javax.swing.JComboBox cBoxMes;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -389,13 +389,13 @@ public class vAgregarDoctor extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
-    private javax.swing.JTextField txtApellidoM;
-    private javax.swing.JTextField txtApellidoP;
-    private javax.swing.JTextField txtCasa;
-    private javax.swing.JTextField txtCelular;
-    private javax.swing.JTextField txtDireccionHospital;
-    private javax.swing.JTextField txtEmail;
-    private javax.swing.JTextField txtNombre;
-    private javax.swing.JTextField txtNombreHospital;
+    public javax.swing.JTextField txtApellidoM;
+    public javax.swing.JTextField txtApellidoP;
+    public javax.swing.JTextField txtCasa;
+    public javax.swing.JTextField txtCelular;
+    public javax.swing.JTextField txtDireccionHospital;
+    public javax.swing.JTextField txtEmail;
+    public javax.swing.JTextField txtNombre;
+    public javax.swing.JTextField txtNombreHospital;
     // End of variables declaration//GEN-END:variables
 }

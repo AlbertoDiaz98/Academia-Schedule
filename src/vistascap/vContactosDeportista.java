@@ -34,7 +34,7 @@ public class vContactosDeportista extends javax.swing.JFrame {
         btnBuscarDep = new javax.swing.JButton();
         btnVolver = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        txtNombre = new javax.swing.JTextField();
+        txtIDDep = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -122,9 +122,9 @@ public class vContactosDeportista extends javax.swing.JFrame {
         jLabel3.setText("ID: ");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 110, -1, -1));
 
-        txtNombre.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        txtNombre.setBorder(null);
-        jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 110, 72, -1));
+        txtIDDep.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        txtIDDep.setBorder(null);
+        jPanel1.add(txtIDDep, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 110, 72, -1));
 
         jSeparator2.setBackground(new java.awt.Color(0, 102, 102));
         jSeparator2.setForeground(new java.awt.Color(55, 94, 151));
@@ -224,6 +224,6 @@ public class vContactosDeportista extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    public javax.swing.JTextField txtNombre;
+    public javax.swing.JTextField txtIDDep;
     // End of variables declaration//GEN-END:variables
 }
