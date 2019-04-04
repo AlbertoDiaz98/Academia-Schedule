@@ -30,7 +30,7 @@ public class Controller implements ActionListener{
     private ContactoDepDAO contactoDepDAO;
     private ContactoDepVO contactoDepVO;
     private ContactoDocDAO contactoDocDAO;
-    private ContactoDocVO contactoDocVo;
+    private ContactoDocVO contactoDocVO;
     private ContactoEstDAO contactoEstDAO;
     private ContactoEstVO contactoEstVO;
     private ContactoLicDAO contactoLicDAO;
@@ -68,7 +68,7 @@ public class Controller implements ActionListener{
        this.contactoDepDAO = contactoDepDAO;
        this.contactoDepVO = contactoDepVO;
        this.contactoDocDAO = contactoDocDAO;
-       this.contactoDocVo = contactoDocVO;
+       this.contactoDocVO = contactoDocVO;
        this.contactoEstDAO = contactoEstDAO;
        this.vagregarDeportista = vaddSportMan ;
        this.vagregarDoctor = vaddDoctor;
@@ -154,6 +154,22 @@ public class Controller implements ActionListener{
             
             this.contactoDepVO.setCorreoDep(this.vagregarDeportista.txtEmail.getText());
             this.vagregarDeportista.txtNombre.getText();
+        }
+        else if(comando.equals("insertarDoctor")){
+            this.contactoDocVO.setCorreoDoc(this.vagregarDoctor.txtEmail.getText());
+            this.contactoDocVO.setNumCasaDoc(this.vagregarDoctor.txtCasa.getText());
+            this.contactoDocVO.setNumCelularDoc(this.vagregarDoctor.txtCelular.getText());
+            this.doctorVO.setApPaDoc(this.vagregarDoctor.txtApellidoP.getText());
+            this.doctorVO.setApMaDoc(this.vagregarDoctor.txtApellidoM.getText());
+            this.doctorVO.setDia((String)this.vagregarDoctor.cBoxDia.getSelectedItem());
+            this.doctorVO.setMes((String)this.vagregarDoctor.cBoxMes.getSelectedItem());
+            this.doctorVO.setAño((String)this.vagregarDoctor.cBoxAño.getSelectedItem());
+            this.doctorVO.setEspecialidad((String)this.vagregarDoctor.cBoxEspecialidad.getSelectedItem());
+            this.doctorVO.setNomHospital(this.vagregarDoctor.txtNombreHospital.getText());
+            this.doctorVO.setDireHospital(this.vagregarDoctor.txtDireccionHospital.getText());
+            this.vagregarDoctor.txtNombre.getText();
+            
+            
         }
     }
 }

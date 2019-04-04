@@ -47,5 +47,7 @@ public class ContactoDocVO {
     public void setIdContactoDoc(String idContactoDoc) {
         this.idContactoDoc = idContactoDoc;
     }
+
+   
     
 }
