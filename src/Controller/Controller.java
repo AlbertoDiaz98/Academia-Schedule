@@ -244,7 +244,7 @@ private v1 v1view;
         else if(comando.equals("insertarEstudiante")){
             this.contactoEstVO.setCorreoEst(this.vagregarEstudiante.txtEmail.getText());
             this.contactoEstVO.setNumCasaEst(this.vagregarEstudiante.txtCasa.getText());
-            this.contactoDocVO.setNumCelularDoc(this.vagregarEstudiante.txtCelular.getText());
+            this.contactoEstVO.setNumCelularEst(this.vagregarEstudiante.txtCelular.getText());
             this.estudianteVO.setNombreEstu(this.vagregarEstudiante.txtNombre.getText());
             this.estudianteVO.setApPaEstu(this.vagregarEstudiante.txtApellidoP.getText());
             this.estudianteVO.setApMaEstu(this.vagregarEstudiante.txtApellidoM.getText());
@@ -281,7 +281,7 @@ private v1 v1view;
         else if(comando.equals("cModificarEstudiante")){
             this.contactoEstVO.setCorreoEst(this.vagregarEstudiante.txtEmail.getText());
             this.contactoEstVO.setNumCasaEst(this.vagregarEstudiante.txtCasa.getText());
-            this.contactoDocVO.setNumCelularDoc(this.vagregarEstudiante.txtCelular.getText());
+            this.contactoEstVO.setNumCelularEst(this.vagregarEstudiante.txtCelular.getText());
             this.estudianteVO.setNombreEstu(this.vagregarEstudiante.txtNombre.getText());
             this.estudianteVO.setApPaEstu(this.vagregarEstudiante.txtApellidoP.getText());
             this.estudianteVO.setApMaEstu(this.vagregarEstudiante.txtApellidoM.getText());
@@ -298,6 +298,57 @@ private v1 v1view;
         else if(comando.equals("eliminarEstudiante")){
             this.contactoEstDAO.eliminarContactos(Integer.parseInt(this.vcontactoEstudiante.txtIDEstu.getText())); 
         }
+        
+        else if(comando.equals("insertarLicenciado")){
+            this.contactoLicVO.setCorreoLic(this.vagregarLicenciado.txtEmail.getText());
+            this.contactoLicVO.setNumCasaLic(this.vagregarLicenciado.txtCasa.getText());
+            this.contactoLicVO.setNumCelularLic(this.vagregarLicenciado.txtCelular.getText());
+            this.licendiadoVO.setNombreLic(this.vagregarLicenciado.txtNombre.getText());
+            this.licendiadoVO.setApPaLic(this.vagregarLicenciado.txtApellidoP.getText());
+            this.licendiadoVO.setApMaLic(this.vagregarLicenciado.txtApellidoM.getText());
+            this.licendiadoVO.setHrsAten(this.vagregarLicenciado.txtHoraInicio.getText());
+            this.licendiadoVO.setTelOfi(this.vagregarLicenciado.txtTelefonoOficina.getText());
+            this.licenciadoDAO.addPerson(licendiadoVO);
+            this.contactoLicDAO.addContact(contactoLicVO, licendiadoVO);     
+            
+            
+        }
+        
+        else if(comando.equals("modificarLicenciado")){
+            this.licenciadoDAO.buscarPersona(Integer.parseInt(this.vcontactoLicenciado.txtIDLic.getText()));
+            this.contactoLicDAO.buscarPersona(Integer.parseInt(this.vcontactoLicenciado.txtIDLic.getText()));
+            this.vagregarLicenciado.txtNombre.setText(this.licendiadoVO.getNombreLic()); 
+            this.vagregarLicenciado.txtApellidoP.setText(this.licendiadoVO.getApPaLic());
+            this.vagregarLicenciado.txtApellidoM.setText(this.licendiadoVO.getApMaLic());
+            this.vagregarLicenciado.txtTelefonoOficina.setText(this.licendiadoVO.getTelOfi());
+            this.vagregarLicenciado.txtHoraInicio.setText(this.licendiadoVO.getHrsAten());
+            this.vagregarLicenciado.txtCelular.setText(this.contactoLicVO.getNumCelularLic());
+            this.vagregarLicenciado.txtCasa.setText(this.contactoLicVO.getNumCasaLic());
+            this.vagregarEstudiante.txtEmail.setText(this.contactoLicVO.getCorreoLic());
+            closeWindows();
+            this.vagregarLicenciado.setVisible(true);
+        }    
+        
+        // para cuando se de a midificar en la ventana vAgregar Estudiante
+        else if(comando.equals("cModificarLicenciado")){
+            this.contactoLicVO.setCorreoLic(this.vagregarLicenciado.txtEmail.getText());
+            this.contactoLicVO.setNumCasaLic(this.vagregarLicenciado.txtCasa.getText());
+            this.contactoLicVO.setNumCelularLic(this.vagregarLicenciado.txtCelular.getText());
+            this.licendiadoVO.setNombreLic(this.vagregarLicenciado.txtNombre.getText());
+            this.licendiadoVO.setApPaLic(this.vagregarLicenciado.txtApellidoP.getText());
+            this.licendiadoVO.setApMaLic(this.vagregarLicenciado.txtApellidoM.getText());
+            this.licendiadoVO.setTelOfi(this.vagregarLicenciado.txtTelefonoOficina.getText());
+            this.licendiadoVO.setHrsAten(this.vagregarLicenciado.txtHoraInicio.getText());
+            this.licenciadoDAO.modificarPersona(licendiadoVO);
+            this.contactoLicDAO.modificarContacto(licendiadoVO, contactoLicVO);
+        }    
+        
+        
+        else if(comando.equals("eliminarLicenciado")){
+            this.contactoLicDAO.eliminarContactos(Integer.parseInt(this.vcontactoLicenciado.txtIDLic.getText())); 
+        }
+        
+        
         
         
         else if(comando.equals("insertarPersona")){
