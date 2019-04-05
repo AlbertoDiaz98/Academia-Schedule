@@ -1,25 +1,25 @@
-create database Contactos;
+reate database Contactos;
 use Contactos;
 
 //Tabla Deportista//
-create table Deportista (idDep int auto_increment primary key,nombreDep varchar(20) , apPaDep varchar(20), apMaDep varchar(20), generoDep varchar(20), 
-dia varchar(10), mes varchar(10), año varchar(20), deporte varchar(20));
+create table Deportista (idDep int auto_increment primary key,nombreDep varchar(20) not null , apPaDep varchar(20) not null, apMaDep varchar(20) not null, generoDep varchar(20) not null, 
+dia varchar(10) not null , mes varchar(10) not null , año varchar(20) not null, deporte varchar(20) not null);
 
 //Tabla Doctor//
-create table Doctor (idDoc int auto_increment primary key ,nombreDoc varchar(20) , apPaDoc varchar (20), apMaDoc varchar(20), dia varchar(10),
-mes varchar(10),año varchar(20),especialidad varchar(40),nomHospital varchar(40),direHospital varchar(50));
+create table Doctor (idDoc int auto_increment primary key ,nombreDoc varchar(20) not null , apPaDoc varchar(20) not null , apMaDoc varchar(20) not null , dia varchar(10) not null ,
+mes varchar(10) not null ,año varchar(20) not null,especialidad varchar(40) not null ,nomHospital varchar(40) not null ,direHospital varchar(50) not null );
 
 //Tabla Estudiante//
-create table Estudiante (idEstu int auto_increment primary key,nombreEstu varchar(20), apPaEstu varchar (20), apMaEstu varchar(20), luNac varchar(30),
-dia varchar(10), mes varchar(10), año varchar(20), carrera varchar(20), email varchar(50));
+create table Estudiante (idEstu int auto_increment primary key,nombreEstu varchar(20) not null , apPaEstu varchar (20) not null, apMaEstu varchar(20) not null, luNac varchar(30) not null,
+dia varchar(10) not null, mes varchar(10) not null, año varchar(20) not null, carrera varchar(20) not null, email varchar(50) not null);
 
 //Tabla Licenciado//                                                                                      
-create table Licenciado (idLic int auto_increment primary key ,nombreLic varchar (20), apPaLic varchar(20), apMaLic varchar(20), telOfi varchar(20), 
-hrsAten varchar(20));
+create table Licenciado (idLic int auto_increment primary key ,nombreLic varchar(20) not null, apPaLic varchar(20) not null, apMaLic varchar(20) not null, telOfi varchar(20)not null, 
+hrsAten varchar(20) not null);
  
 //Tabla Persona//                
-create table Persona (idPers auto_increment int primary key, nombrePers varchar(20), apPaPers varchar(20), apMaPers varchar(20), domicilio varchar(50), 
-medContacPref varchar(20), ocupacion varchar(20));
+create table Persona (idPers auto_increment int primary key, nombrePers varchar(20) not null, apPaPers varchar(20) not null, apMaPers varchar(20) not null, domicilio varchar(50) not null, 
+medContacPref varchar(20) not null, ocupacion varchar(20) not null);
  
 //Tabla Medios de contacto para Deportista// 
 create table MediosDeContactoDep ( CelDep varchar(2000),TelCasaDep varchar(2000), CorreoDep varchar(2000) ,idMediContacDep int auto_increment primary key, idDep int, 
