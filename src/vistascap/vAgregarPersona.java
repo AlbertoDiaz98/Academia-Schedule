@@ -32,24 +32,24 @@ public class vAgregarPersona extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jComboBox3 = new javax.swing.JComboBox();
+        txtNombrePer = new javax.swing.JTextField();
+        cBoxContactoPer = new javax.swing.JComboBox();
         jLabel11 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
-        jTextField7 = new javax.swing.JTextField();
+        txtApPaPer = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
-        jTextField8 = new javax.swing.JTextField();
+        txtApMaPer = new javax.swing.JTextField();
         jSeparator4 = new javax.swing.JSeparator();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
+        txtCelularPer = new javax.swing.JTextField();
+        txtCasaPer = new javax.swing.JTextField();
+        txtEmail = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
-        jTextField12 = new javax.swing.JTextField();
+        txtDomicilioPer = new javax.swing.JTextField();
         jSeparator8 = new javax.swing.JSeparator();
         jLabel17 = new javax.swing.JLabel();
-        jTextField13 = new javax.swing.JTextField();
+        txtOcupacionPer = new javax.swing.JTextField();
         jSeparator9 = new javax.swing.JSeparator();
         btnVolver = new javax.swing.JButton();
         btnAgregar = new javax.swing.JButton();
@@ -95,15 +95,15 @@ public class vAgregarPersona extends javax.swing.JFrame {
         jLabel9.setText("Medios Contacto: ");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 530, -1, -1));
 
-        jTextField2.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jTextField2.setBorder(null);
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 260, -1));
+        txtNombrePer.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        txtNombrePer.setBorder(null);
+        getContentPane().add(txtNombrePer, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 260, -1));
 
-        jComboBox3.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "No. Celular", "No. Casa", "E-mail" }));
-        jComboBox3.setBorder(null);
-        jComboBox3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        getContentPane().add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 450, -1, -1));
+        cBoxContactoPer.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        cBoxContactoPer.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "No. Celular", "No. Casa", "E-mail" }));
+        cBoxContactoPer.setBorder(null);
+        cBoxContactoPer.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        getContentPane().add(cBoxContactoPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 450, -1, -1));
 
         jLabel11.setBackground(new java.awt.Color(0, 102, 102));
         jLabel11.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
@@ -127,33 +127,33 @@ public class vAgregarPersona extends javax.swing.JFrame {
         jSeparator2.setForeground(new java.awt.Color(55, 94, 151));
         getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 260, 20));
 
-        jTextField7.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jTextField7.setBorder(null);
-        getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 260, -1));
+        txtApPaPer.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        txtApPaPer.setBorder(null);
+        getContentPane().add(txtApPaPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 260, -1));
 
         jSeparator3.setBackground(new java.awt.Color(0, 102, 102));
         jSeparator3.setForeground(new java.awt.Color(55, 94, 151));
         getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, 260, 20));
 
-        jTextField8.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jTextField8.setBorder(null);
-        getContentPane().add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, 260, -1));
+        txtApMaPer.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        txtApMaPer.setBorder(null);
+        getContentPane().add(txtApMaPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, 260, -1));
 
         jSeparator4.setBackground(new java.awt.Color(0, 102, 102));
         jSeparator4.setForeground(new java.awt.Color(55, 94, 151));
         getContentPane().add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, 260, 20));
 
-        jTextField9.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jTextField9.setBorder(null);
-        getContentPane().add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 580, 170, -1));
+        txtCelularPer.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        txtCelularPer.setBorder(null);
+        getContentPane().add(txtCelularPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 580, 170, -1));
 
-        jTextField10.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jTextField10.setBorder(null);
-        getContentPane().add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 580, 170, -1));
+        txtCasaPer.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        txtCasaPer.setBorder(null);
+        getContentPane().add(txtCasaPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 580, 170, -1));
 
-        jTextField11.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jTextField11.setBorder(null);
-        getContentPane().add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 580, 170, -1));
+        txtEmail.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        txtEmail.setBorder(null);
+        getContentPane().add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 580, 170, -1));
 
         jLabel16.setBackground(new java.awt.Color(0, 102, 102));
         jLabel16.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
@@ -161,9 +161,9 @@ public class vAgregarPersona extends javax.swing.JFrame {
         jLabel16.setText("*Domicilio:");
         getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 320, -1, -1));
 
-        jTextField12.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jTextField12.setBorder(null);
-        getContentPane().add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 320, 260, -1));
+        txtDomicilioPer.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        txtDomicilioPer.setBorder(null);
+        getContentPane().add(txtDomicilioPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 320, 260, -1));
 
         jSeparator8.setBackground(new java.awt.Color(0, 102, 102));
         jSeparator8.setForeground(new java.awt.Color(55, 94, 151));
@@ -175,9 +175,9 @@ public class vAgregarPersona extends javax.swing.JFrame {
         jLabel17.setText("*Ocupación:");
         getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 380, -1, -1));
 
-        jTextField13.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jTextField13.setBorder(null);
-        getContentPane().add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 380, 260, -1));
+        txtOcupacionPer.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        txtOcupacionPer.setBorder(null);
+        getContentPane().add(txtOcupacionPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 380, 260, -1));
 
         jSeparator9.setBackground(new java.awt.Color(0, 102, 102));
         jSeparator9.setForeground(new java.awt.Color(55, 94, 151));
@@ -313,7 +313,7 @@ public class vAgregarPersona extends javax.swing.JFrame {
     public javax.swing.JButton btnAgregar;
     public javax.swing.JButton btnModificar;
     public javax.swing.JButton btnVolver;
-    public javax.swing.JComboBox jComboBox3;
+    public javax.swing.JComboBox cBoxContactoPer;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel14;
@@ -336,13 +336,13 @@ public class vAgregarPersona extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator7;
     public javax.swing.JSeparator jSeparator8;
     public javax.swing.JSeparator jSeparator9;
-    public javax.swing.JTextField jTextField10;
-    public javax.swing.JTextField jTextField11;
-    public javax.swing.JTextField jTextField12;
-    public javax.swing.JTextField jTextField13;
-    public javax.swing.JTextField jTextField2;
-    public javax.swing.JTextField jTextField7;
-    public javax.swing.JTextField jTextField8;
-    public javax.swing.JTextField jTextField9;
+    public javax.swing.JTextField txtApMaPer;
+    public javax.swing.JTextField txtApPaPer;
+    public javax.swing.JTextField txtCasaPer;
+    public javax.swing.JTextField txtCelularPer;
+    public javax.swing.JTextField txtDomicilioPer;
+    public javax.swing.JTextField txtEmail;
+    public javax.swing.JTextField txtNombrePer;
+    public javax.swing.JTextField txtOcupacionPer;
     // End of variables declaration//GEN-END:variables
 }

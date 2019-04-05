@@ -167,9 +167,19 @@ public class Controller implements ActionListener{
             this.doctorVO.setEspecialidad((String)this.vagregarDoctor.cBoxEspecialidad.getSelectedItem());
             this.doctorVO.setNomHospital(this.vagregarDoctor.txtNombreHospital.getText());
             this.doctorVO.setDireHospital(this.vagregarDoctor.txtDireccionHospital.getText());
-            this.vagregarDoctor.txtNombre.getText();
-            
-            
+            this.vagregarDoctor.txtNombre.getText();   
+        }
+        
+        else if(comando.equals("insertarPersona")){
+            this.contactoPerVO.setCorreoPer(this.vagregarPersona.txtEmail.getText());
+            this.contactoPerVO.setNumCasaPer(this.vagregarPersona.txtCasaPer.getText());
+            this.contactoPerVO.setNumCelularPer(this.vagregarPersona.txtCelularPer.getText());
+            this.personaVO.setApPaPers(this.vagregarPersona.txtApPaPer.getText());
+            this.personaVO.setApMaPers(this.vagregarPersona.txtApMaPer.getText());
+            this.personaVO.setDomicilio(this.vagregarPersona.txtDomicilioPer.getText());
+            this.personaVO.setOcupacion(this.vagregarPersona.txtOcupacionPer.getText());
+            this.personaVO.setMedContacPref((String)this.vagregarPersona.cBoxContactoPer.getSelectedItem());
+            this.vagregarPersona.txtNombrePer.getText();           
         }
     }
 }

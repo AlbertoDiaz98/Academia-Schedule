@@ -28,11 +28,11 @@ public class PersonaDAO {
                     + "INTO Persona VALUES (?,?,?,?,?,?,?)");
             est.setInt(1, persona.getIdPers());
             est.setString(1, persona.getNombrePers());
-            est.setString(3, persona.getApPaPers());
-            est.setString(4, persona.getApMaPers());
+            est.setString(2, persona.getApPaPers());
+            est.setString(3, persona.getApMaPers());
             est.setString(4, persona.getDomicilio());
-            est.setString(6, persona.getMedContacPref());
-            est.setString(7, persona.getOcupacion());
+            est.setString(5, persona.getMedContacPref());
+            est.setString(6, persona.getOcupacion());
             est.executeUpdate();
             est.close();
             conex.desconectar();
@@ -112,7 +112,7 @@ public class PersonaDAO {
             estatuto.setString(4, persona.getApMaPers());
             estatuto.setString(5, persona.getDomicilio());
             estatuto.setString(6, persona.getMedContacPref());
-            estatuto.setString(10, persona.getOcupacion());
+            estatuto.setString(7, persona.getOcupacion());
             estatuto.executeUpdate();
 
             JOptionPane.showMessageDialog(null,
