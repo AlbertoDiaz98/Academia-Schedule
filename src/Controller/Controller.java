@@ -222,7 +222,7 @@ private v1 v1view;
             this.deportistasVO.setNombreDep(this.vagregarDeportista.txtNombre.getText());
             this.contactoDepDAO.addContact(contactoDepVO, deportistasVO);
         }
-        else if(comando.equals("modificarEstudiante")){
+        else if(comando.equals("modificarDeportista")){
             this.contactoDepVO.getCorreoDep();
             this.contactoDepVO.getNumCasaDep();
             this.contactoDepVO.getNumCelularDep();
@@ -235,8 +235,8 @@ private v1 v1view;
             this.deportistasVO.getMes();
             this.deportistasVO.getNombreDep();
             this.contactoDepDAO.modificarContacto(deportistasVO, contactoDepVO);
-        }else if(comando.equals("eliminarEstudiante")){
-            this.contactoDepDAO.eliminarContactos(Integer.parseInt(this.deportistasVO.getIdDep()));
+        }else if(comando.equals("eliminarDeportista")){
+            this.contactoDepDAO.eliminarContactos((this.deportistasVO.getIdDep()));
         }
         else if(comando.equals("insertarDoctor")){
             this.contactoDocVO.setCorreoDoc(this.vagregarDoctor.txtEmail.getText());
