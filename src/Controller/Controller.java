@@ -557,7 +557,24 @@ private v1 v1view;
         }
         
           else if(comando.equals("vInsertarDeportista")){
-            this.contactoPerDAO.eliminarContactos(Integer.parseInt(this.vcontactoPersona.txtIDPer.getText())); 
+               closeWindows();
+               this.vagregarDeportista.setVisible(true);
+        }
+          else if(comando.equals("vInsertarDoctor")){
+               closeWindows();
+               this.vagregarDeportista.setVisible(true);
+        }
+              else if(comando.equals("vInsertarEstudiante")){
+               closeWindows();
+               this.vagregarDeportista.setVisible(true);
+        }
+                    else if(comando.equals("vInsertarLicenciado")){
+               closeWindows();
+               this.vagregarDeportista.setVisible(true);
+        }
+                    else if(comando.equals("vInsertarPersona")){
+               closeWindows();
+               this.vagregarDeportista.setVisible(true);
         }
           
     }
