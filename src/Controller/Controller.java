@@ -206,6 +206,7 @@ public class Controller implements ActionListener{
             this.contactoDocVO.setCorreoDoc(this.vagregarDoctor.txtEmail.getText());
             this.contactoDocVO.setNumCasaDoc(this.vagregarDoctor.txtCasa.getText());
             this.contactoDocVO.setNumCelularDoc(this.vagregarDoctor.txtCelular.getText());
+            this.doctorVO.setNombreDoc(this.vagregarDoctor.txtNombre.getText());
             this.doctorVO.setApPaDoc(this.vagregarDoctor.txtApellidoP.getText());
             this.doctorVO.setApMaDoc(this.vagregarDoctor.txtApellidoM.getText());
             this.doctorVO.setDia((String)this.vagregarDoctor.cBoxDia.getSelectedItem());
@@ -214,7 +215,10 @@ public class Controller implements ActionListener{
             this.doctorVO.setEspecialidad((String)this.vagregarDoctor.cBoxEspecialidad.getSelectedItem());
             this.doctorVO.setNomHospital(this.vagregarDoctor.txtNombreHospital.getText());
             this.doctorVO.setDireHospital(this.vagregarDoctor.txtDireccionHospital.getText());
-            this.vagregarDoctor.txtNombre.getText();   
+            this.doctorDAO.addPerson(doctorVO);
+            this.contactoDocDAO.addContact(contactoDocVO, doctorVO);
+           
+            
         }
         
         else if(comando.equals("insertarEstudiante")){
