@@ -181,30 +181,57 @@ private v1 v1view;
     }
     public void actionPerformed(ActionEvent e){
         String comando = e.getActionCommand();
-        if(comando.equals("openSportmanView")){
+          if(comando.equals("openSportmanView")){
             closeWindows();
-            this.vagregarDeportista.setVisible(true);
+            this.vcontactoDeportista.setVisible(true);
+            this.vcontactoDeportista.tb1Dep.setModel(this.deportistasDAO.mostrarDatosDep());
+            this.vcontactoDeportista.tb2Dep.setModel(this.contactoDepDAO.mostrarContactosDep());
         }else if(comando.equals("openDoctorView")){
             closeWindows();
-            this.vagregarDoctor.setVisible(true);
+            this.vcontactoDoctor.setVisible(true);
+            this.vcontactoDoctor.tb1Doc.setModel(this.doctorDAO.mostrarDatosDoc());
+            this.vcontactoDoctor.tb2Doc.setModel(this.contactoDocDAO.mostrarContactosDoc());
         }else if(comando.equals("openStudentView")){
             closeWindows();
-            this.vagregarEstudiante.setVisible(true);
+            this.vcontactoEstudiante.tb1Estu.setModel(this.estudianteDAO.mostrarDatosEstu());
+            this.vcontactoEstudiante.tb2Estu.setModel(this.contactoEstDAO.mostrarContactosEst());
         }else if(comando.equals("openLicentiateView")){
             closeWindows();
             this.vagregarLicenciado.setVisible(true);
+            this.vcontactoLicenciado.tb1Lic.setModel(this.licenciadoDAO.mostrarContactosLic());
+            this.vcontactoLicenciado.tb2Lic.setModel(this.contactoLicDAO.mostrarContactosLic());
         }else if(comando.equals("openPersonView")){
             closeWindows();
             this.vagregarPersona.setVisible(true);
+            this.vcontactoLicenciado.tb1Lic.setModel(this.licenciadoDAO.mostrarContactosLic());
+            this.vcontactoLicenciado.tb2Lic.setModel(this.contactoLicDAO.mostrarContactosLic());
         }else if(comando.equals("volverMenu")){
             closeWindows();
             this.v1view.setVisible(true);
-        }else if(comando.equals("volverContactoDeportista")){
+        }else if(comando.equals("volveContactoDeportista")){
             closeWindows();
             this.vcontactoDeportista.setVisible(true);
+            this.vcontactoDeportista.tb1Dep.setModel(this.deportistasDAO.mostrarDatosDep());
+            this.vcontactoDeportista.tb2Dep.setModel(this.contactoDepDAO.mostrarContactosDep());
         }else if(comando.equals("volverContactoDoctor")){
             closeWindows();
             this.vcontactoDoctor.setVisible(true);
+            this.vcontactoDoctor.tb1Doc.setModel(this.doctorDAO.mostrarDatosDoc());
+            this.vcontactoDoctor.tb2Doc.setModel(this.contactoDocDAO.mostrarContactosDoc());
+        }else if(comando.equals("volverContactoEstudiante")){
+            closeWindows();
+            this.vcontactoEstudiante.tb1Estu.setModel(this.estudianteDAO.mostrarDatosEstu());
+            this.vcontactoEstudiante.tb2Estu.setModel(this.contactoEstDAO.mostrarContactosEst());
+        }else if(comando.equals("volverContactoLicenciado")){
+            closeWindows();
+            this.vagregarLicenciado.setVisible(true);
+            this.vcontactoLicenciado.tb1Lic.setModel(this.licenciadoDAO.mostrarContactosLic());
+            this.vcontactoLicenciado.tb2Lic.setModel(this.contactoLicDAO.mostrarContactosLic());
+        }else if(comando.equals("volverContactoPersona")){
+            closeWindows();
+            this.vagregarPersona.setVisible(true);
+            this.vcontactoLicenciado.tb1Lic.setModel(this.licenciadoDAO.mostrarContactosLic());
+            this.vcontactoLicenciado.tb2Lic.setModel(this.contactoLicDAO.mostrarContactosLic());
         }
         //database insert, search, add and delete
         else if(comando.equals("insertarDeportista")){
