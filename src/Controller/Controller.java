@@ -190,7 +190,17 @@ public class Controller implements ActionListener{
         else if(comando.equals("insertarDeportista")){
             
             this.contactoDepVO.setCorreoDep(this.vagregarDeportista.txtEmail.getText());
-            this.vagregarDeportista.txtNombre.getText();
+            this.contactoDepVO.setNumCasaDep(this.vagregarDeportista.txtCasa.getText());
+            this.contactoDepVO.setNumCelularDep(this.vagregarDeportista.txtCelular.getText());
+            this.deportistasVO.setApMaDep(this.vagregarDeportista.txtApellidoM.getText());
+            this.deportistasVO.setApPaDep(this.vagregarDeportista.txtApellidoP.getText());
+            this.deportistasVO.setAño((String) this.vagregarDeportista.cBoxAño.getSelectedItem());
+            this.deportistasVO.setDeporte((String) this.vagregarDeportista.cBoxDeporte.getSelectedItem());
+            this.deportistasVO.setDia((String) this.vagregarDeportista.cBoxDia.getSelectedItem());
+            this.deportistasVO.setGeneroDep((String) this.vagregarDeportista.cBoxGenero.getSelectedItem());
+            this.deportistasVO.setMes((String) this.vagregarDeportista.cBoxMes.getSelectedItem());
+            this.deportistasVO.setNombreDep(this.vagregarDeportista.txtNombre.getText());
+            this.contactoDepDAO.addContact(contactoDepVO, deportistasVO);
         }
         else if(comando.equals("insertarDoctor")){
             this.contactoDocVO.setCorreoDoc(this.vagregarDoctor.txtEmail.getText());
