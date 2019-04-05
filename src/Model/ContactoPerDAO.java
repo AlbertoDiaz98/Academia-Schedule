@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ContactoPerDAO {
 
-    Connection conex = new Connection();
+  Connection conex = new Connection();
     PreparedStatement est;
             ShowContacts sw = new ShowContacts();
         DefaultTableModel contactoPer= new DefaultTableModel();      
@@ -42,6 +42,37 @@ public class ContactoPerDAO {
         }
     }
 
+    
+    public void modificarContacto(PersonaVO per, ContactoPerVO contacto) {
+        try {
+            String consulta = "UPDATE MediosDeContactoPers SET "
+                    + "CelPers=?, TelCasaEstu=?, CorreoPers=?  WHERE idPers=? ";
+            PreparedStatement estatuto;
+            estatuto = conex.getConnection().prepareStatement(consulta);
+
+            estatuto.setInt(1, per.getIdPers());
+            estatuto.setString(2, contacto.getNumCelularPer());
+            estatuto.setString(3, contacto.getNumCasaPer());
+            estatuto.setString(4, contacto.getCorreoPer());
+            estatuto.executeUpdate();
+
+            JOptionPane.showMessageDialog(null,
+                    " Se ha Modificado Correctamente ",
+                    "Proceso Realizado Correctamente",
+                    JOptionPane.INFORMATION_MESSAGE);
+            estatuto.close();
+            conex.desconectar();
+
+        } catch (SQLException e) {
+
+            JOptionPane.showMessageDialog(null,
+                    "Error al Modificar: \n" + e,
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    
+    
     public ContactoPerVO buscarPersona(int codigo) {
 
         ContactoPerVO contactFound = new ContactoPerVO();
@@ -98,6 +129,6 @@ public class ContactoPerDAO {
         return contactoPer;
     }
 
-    
+      
     
 }

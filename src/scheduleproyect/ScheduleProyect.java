@@ -20,8 +20,7 @@ public class ScheduleProyect {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        v1 vista1 = new v1();
+       v1 vista1 = new v1();
         Connection con = new Connection();
         ContactoDepDAO contactoDepDAO = new ContactoDepDAO();
         ContactoDepVO contactoDepVO = new ContactoDepVO();

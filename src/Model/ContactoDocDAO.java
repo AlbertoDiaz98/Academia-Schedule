@@ -16,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
  * @author beto-
  */
 public class ContactoDocDAO {Connection conex= new Connection();
-        PreparedStatement est;
+          PreparedStatement est;
         ShowContacts sw = new ShowContacts();
         DefaultTableModel contactoDoc= new DefaultTableModel();        
         
@@ -43,6 +43,35 @@ public class ContactoDocDAO {Connection conex= new Connection();
                     + " Contactos: \n"+e);
         }
     }
+
+public void modificarContacto(DoctorVO doctor, ContactoDocVO contacto) {
+        try {
+            String consulta = "UPDATE MediosDeContactoDoc SET "
+                    + "CelDoc=?, TelCasaDoc=?, CorreoDoc=?  WHERE idDoc=? ";
+            PreparedStatement estatuto;
+            estatuto = conex.getConnection().prepareStatement(consulta);
+
+            estatuto.setInt(1, doctor.getIdDoc());
+            estatuto.setString(2, contacto.getNumCelularDoc());
+            estatuto.setString(3, contacto.getNumCasaDoc());
+            estatuto.setString(4, contacto.getCorreoDoc());
+            estatuto.executeUpdate();
+
+            JOptionPane.showMessageDialog(null,
+                    " Se ha Modificado Correctamente ",
+                    "Proceso Realizado Correctamente",
+                    JOptionPane.INFORMATION_MESSAGE);
+            estatuto.close();
+            conex.desconectar();
+
+        } catch (SQLException e) {
+
+            JOptionPane.showMessageDialog(null,
+                    "Error al Modificar: \n" + e,
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
         
          public ContactoDocVO buscarDoctor(int codigo){
         

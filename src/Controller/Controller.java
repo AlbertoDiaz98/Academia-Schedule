@@ -25,7 +25,7 @@ import vistascap.*;
  */
 public class Controller implements ActionListener{
     //View packages
-    private v1 v1view;
+private v1 v1view;
     private Connection connection;
     private ContactoDepDAO contactoDepDAO;
     private ContactoDepVO contactoDepVO;
@@ -260,8 +260,8 @@ public class Controller implements ActionListener{
         }
         
         else if(comando.equals("modificarEstudiante")){
-            this.estudianteDAO.buscarPersona(Integer.parseInt(this.vcontactoDeportista.txtIDDep.getText()));
-            this.contactoEstDAO.buscarEstuante(Integer.parseInt(this.vcontactoDeportista.txtIDDep.getText()));
+            this.estudianteDAO.buscarPersona(Integer.parseInt(this.vcontactoEstudiante.txtIDEstu.getText()));
+            this.contactoEstDAO.buscarEstuante(Integer.parseInt(this.vcontactoEstudiante.txtIDEstu.getText()));
             this.vagregarEstudiante.txtNombre.setText(this.estudianteVO.getNombreEstu()); 
             this.vagregarEstudiante.txtApellidoP.setText(this.estudianteVO.getApPaEstu());
             this.vagregarEstudiante.txtApellidoM.setText(this.estudianteVO.getApMaEstu());
@@ -276,6 +276,24 @@ public class Controller implements ActionListener{
             closeWindows();
             this.vagregarEstudiante.setVisible(true);
         }    
+        
+        // para cuando se de a midificar en la ventana vAgregar Estudiante
+        else if(comando.equals("cModificarEstudiante")){
+            this.contactoEstVO.setCorreoEst(this.vagregarEstudiante.txtEmail.getText());
+            this.contactoEstVO.setNumCasaEst(this.vagregarEstudiante.txtCasa.getText());
+            this.contactoDocVO.setNumCelularDoc(this.vagregarEstudiante.txtCelular.getText());
+            this.estudianteVO.setNombreEstu(this.vagregarEstudiante.txtNombre.getText());
+            this.estudianteVO.setApPaEstu(this.vagregarEstudiante.txtApellidoP.getText());
+            this.estudianteVO.setApMaEstu(this.vagregarEstudiante.txtApellidoM.getText());
+            this.estudianteVO.setDia((String)this.vagregarEstudiante.cBoxDia.getSelectedItem());
+            this.estudianteVO.setMes((String)this.vagregarEstudiante.cBoxMes.getSelectedItem());
+            this.estudianteVO.setAño((String)this.vagregarEstudiante.cBoxAño.getSelectedItem());
+            this.estudianteVO.setCarrera((String)this.vagregarEstudiante.txtCarrera.getText());
+            this.estudianteVO.setLuNac(this.vagregarDoctor.txtNombreHospital.getText());
+            this.estudianteDAO.modificarPersona(estudianteVO);
+            this.contactoEstDAO.modificarContacto(estudianteVO, contactoEstVO);
+        }    
+        
         
         else if(comando.equals("eliminarEstudiante")){
             this.contactoEstDAO.eliminarContactos(Integer.parseInt(this.vcontactoEstudiante.txtIDEstu.getText())); 

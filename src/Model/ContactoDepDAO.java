@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ContactoDepDAO {
     
-    Connection conex= new Connection();
+  Connection conex= new Connection();
         PreparedStatement est;
         ShowContacts sw = new ShowContacts();
         DefaultTableModel contactoDep= new DefaultTableModel();        
@@ -89,6 +89,34 @@ public class ContactoDepDAO {
         }
     }
         
+public void modificarContacto(DeportistasVO deportista, ContactoDepVO contacto) {
+        try {
+            String consulta = "UPDATE MediosDeContactoDep SET "
+                    + "CelDep=?, TelCasaDep=?, CorreoDep=?  WHERE idDep=? ";
+            PreparedStatement estatuto;
+            estatuto = conex.getConnection().prepareStatement(consulta);
+
+            estatuto.setInt(1, deportista.getIdDep());
+            estatuto.setString(2, contacto.getNumCelularDep());
+            estatuto.setString(3, contacto.getNumCasaDep());
+            estatuto.setString(4, contacto.getCorreoDep());
+           
+            estatuto.executeUpdate();
+
+            JOptionPane.showMessageDialog(null,
+                    " Se ha Modificado Correctamente ",
+                    "Proceso Realizado Correctamente",
+                    JOptionPane.INFORMATION_MESSAGE);
+            estatuto.close();
+            conex.desconectar();
+
+        } catch (SQLException e) {
+
+            JOptionPane.showMessageDialog(null,
+                    "Error al Modificar: \n" + e,
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
     
  
     public DefaultTableModel mostrarContactosDep(){
@@ -99,5 +127,5 @@ public class ContactoDepDAO {
 	}
         return contactoDep;
     }
-    
+      
 }

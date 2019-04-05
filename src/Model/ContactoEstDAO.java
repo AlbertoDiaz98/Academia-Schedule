@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ContactoEstDAO {
     
-     Connection conex= new Connection();
+   Connection conex= new Connection();
         PreparedStatement est;
         ShowContacts sw = new ShowContacts();
         DefaultTableModel contactoEst= new DefaultTableModel();        
@@ -74,6 +74,37 @@ public class ContactoEstDAO {
 	} else return null;				
     }
    
+        public void modificarContacto(EstudianteVO est, ContactoEstVO contacto) {
+        try {
+            String consulta = "UPDATE MediosDeContactoEstu SET "
+                    + "CelEstu=?, TelCasaEstu=?, CorreoEstu=?  WHERE idEstu=? ";
+            PreparedStatement estatuto;
+            estatuto = conex.getConnection().prepareStatement(consulta);
+
+            estatuto.setInt(1, est.getIdEstu());
+            estatuto.setString(2, contacto.getNumCelularEst());
+            estatuto.setString(3, contacto.getNumCasaEst());
+            estatuto.setString(4, contacto.getCorreoEst());
+            estatuto.executeUpdate();
+
+            JOptionPane.showMessageDialog(null,
+                    " Se ha Modificado Correctamente ",
+                    "Proceso Realizado Correctamente",
+                    JOptionPane.INFORMATION_MESSAGE);
+            estatuto.close();
+            conex.desconectar();
+
+        } catch (SQLException e) {
+
+            JOptionPane.showMessageDialog(null,
+                    "Error al Modificar: \n" + e,
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+         
+         
+         
  public void eliminarContactos(int code) {
         
         try {
@@ -103,6 +134,5 @@ public class ContactoEstDAO {
     }
     
   
- 
-    
+   
 }

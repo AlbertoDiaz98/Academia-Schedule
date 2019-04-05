@@ -72,6 +72,38 @@ public class ContactoLicDAO {
 	} else return null;				
     }
    
+         
+         
+         public void modificarContacto(LicenciadoVO lic, ContactoLicVO contacto) {
+        try {
+            String consulta = "UPDATE MediosDeContactoEstu SET "
+                    + "CelEstu=?, TelCasaEstu=?, CorreoEstu=?  WHERE idEstu=? ";
+            PreparedStatement estatuto;
+            estatuto = conex.getConnection().prepareStatement(consulta);
+
+            estatuto.setInt(1, lic.getIdLic());
+            estatuto.setString(2, contacto.getNumCelularLic());
+            estatuto.setString(3, contacto.getNumCasaLic());
+            estatuto.setString(4, contacto.getCorreoLic());
+            estatuto.executeUpdate();
+
+            JOptionPane.showMessageDialog(null,
+                    " Se ha Modificado Correctamente ",
+                    "Proceso Realizado Correctamente",
+                    JOptionPane.INFORMATION_MESSAGE);
+            estatuto.close();
+            conex.desconectar();
+
+        } catch (SQLException e) {
+
+            JOptionPane.showMessageDialog(null,
+                    "Error al Modificar: \n" + e,
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+         
+         
  public void eliminarContactos(int code) {
         
         try {
