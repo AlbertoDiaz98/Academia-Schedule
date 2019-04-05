@@ -115,6 +115,75 @@ private v1 v1view;
         v1view.btnEstudiante.addActionListener(this);
         v1view.btnLicenciado.addActionListener(this);
         v1view.btnPersona.addActionListener(this);
+        
+        this.vcontactoDeportista.btnAgregarDep.setActionCommand("insertarDeportista");
+        this.vcontactoDeportista.btnBuscarDep.setActionCommand("buscarDeportista");
+        this.vcontactoDeportista.btnEliminarDep.setActionCommand("eliminarDeportista");
+        this.vcontactoDeportista.btnModificarDep.setActionCommand("modificarDeportista");
+        this.vcontactoDeportista.btnVolver.setActionCommand("volverMenuP");
+        this.vcontactoDoctor.btnAgregarDoc.setActionCommand("insertarDoctor");
+        this.vcontactoDoctor.btnBuscarDoc.setActionCommand("buscarDoctor");
+        this.vcontactoDoctor.btnEliminarDoc.setActionCommand("eliminarDoctor");
+        this.vcontactoDoctor.btnModificarDoc.setActionCommand("modificarDoctor");
+        this.vcontactoDoctor.btnVolver.setActionCommand("volverMenuV");
+        this.vcontactoEstudiante.btnAgregarEstu.setActionCommand("insertarEstudiante");
+        this.vcontactoEstudiante.btnBuscarEstu.setActionCommand("buscarEstudiante");
+        this.vcontactoEstudiante.btnEliminarEstu.setActionCommand("eliminarEstudiante");
+        this.vcontactoEstudiante.btnModificarEstu.setActionCommand("modificarEstudiante");
+        this.vcontactoEstudiante.btnVolver.setActionCommand("volverMenuE");
+        this.vcontactoLicenciado.btnAgregarLic.setActionCommand("insertarLicenciado");
+        this.vcontactoLicenciado.btnBuscarLic.setActionCommand("buscarLicenciado");
+        this.vcontactoLicenciado.btnEliminarLic.setActionCommand("eliminarLicenciado");
+        this.vcontactoLicenciado.btnModificarLic.setActionCommand("modificarLicenciado");
+        this.vcontactoLicenciado.btnVolver.setActionCommand("volverMenuL");
+        this.vcontactoPersona.btnAgregarPer.setActionCommand("insertarPersona");
+        this.vcontactoPersona.btnBuscarPer.setActionCommand("buscarPersona");
+        this.vcontactoPersona.btnEliminarPer.setActionCommand("eliminarPersona");
+        this.vcontactoPersona.btnModificarPer.setActionCommand("modificarPersona");
+        this.vcontactoPersona.btnVolver.setActionCommand("volverMenuP");
+        
+        vcontactoDeportista.btnAgregarDep.addActionListener(this);
+        vcontactoDeportista.btnBuscarDep.addActionListener(this);
+        vcontactoDeportista.btnEliminarDep.addActionListener(this);
+        vcontactoDeportista.btnModificarDep.addActionListener(this);
+        vcontactoDeportista.btnVolver.addActionListener(this);
+        vcontactoDoctor.btnAgregarDoc.addActionListener(this);
+        vcontactoDoctor.btnBuscarDoc.addActionListener(this);
+        vcontactoDoctor.btnEliminarDoc.addActionListener(this);
+        vcontactoDoctor.btnModificarDoc.addActionListener(this);
+        vcontactoDoctor.btnVolver.addActionListener(this);
+        vcontactoEstudiante.btnAgregarEstu.addActionListener(this);
+        vcontactoEstudiante.btnBuscarEstu.addActionListener(this);
+        vcontactoEstudiante.btnEliminarEstu.addActionListener(this);
+        vcontactoEstudiante.btnModificarEstu.addActionListener(this);
+        vcontactoEstudiante.btnVolver.addActionListener(this);
+        vcontactoLicenciado.btnAgregarLic.addActionListener(this);
+        vcontactoLicenciado.btnBuscarLic.addActionListener(this);
+        vcontactoLicenciado.btnEliminarLic.addActionListener(this);
+        vcontactoLicenciado.btnModificarLic.addActionListener(this);
+        vcontactoLicenciado.btnVolver.addActionListener(this);
+        vcontactoPersona.btnAgregarPer.addActionListener(this);
+        vcontactoPersona.btnBuscarPer.addActionListener(this);
+        vcontactoPersona.btnEliminarPer.addActionListener(this);
+        vcontactoPersona.btnModificarPer.addActionListener(this);
+        vcontactoPersona.btnVolver.addActionListener(this);
+        
+        this.vagregarDeportista.btnAgregar.setActionCommand("cAgregarUsuario");
+        this.vagregarDeportista.btnModificar.setActionCommand("cModificarDeportista");
+        this.vagregarDeportista.btnVolver.setActionCommand("volver");
+        this.vagregarDoctor.btnAgregar.setActionCommand("cAgregarDoctor");
+        this.vagregarDoctor.btnModificar.setActionCommand("cModificarDoctor");
+        this.vagregarDoctor.btnVolver.setActionCommand("volver");
+        this.vagregarLicenciado.btnAgregar.setActionCommand("cAgregarLicenciado");
+        this.vagregarLicenciado.btnModificar.setActionCommand("cModificarLicenciado");
+        this.vagregarLicenciado.btnVolver.setActionCommand("volver");
+        this.vagregarEstudiante.btnAgregar.setActionCommand("cAgregarEstudiante");
+        this.vagregarEstudiante.btnModificar.setActionCommand("cModificarEstudiante");
+        this.vagregarEstudiante.btnVolver.setActionCommand("volver");
+        this.vagregarPersona.btnAgregar.setActionCommand("cAgregarPersona");
+        this.vagregarPersona.btnModificar.setActionCommand("cModificarPersona");
+        this.vagregarPersona.btnVolver.setActionCommand("volver");
+        
     }
     public void go(){
         this.v1view.setVisible(true);
@@ -486,5 +555,10 @@ private v1 v1view;
         else if(comando.equals("eliminarPersona")){
             this.contactoPerDAO.eliminarContactos(Integer.parseInt(this.vcontactoPersona.txtIDPer.getText())); 
         }
+        
+          else if(comando.equals("vInsertarDeportista")){
+            this.contactoPerDAO.eliminarContactos(Integer.parseInt(this.vcontactoPersona.txtIDPer.getText())); 
+        }
+          
     }
 }
