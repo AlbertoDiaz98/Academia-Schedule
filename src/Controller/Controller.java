@@ -97,6 +97,11 @@ public class Controller implements ActionListener{
        iniciarAddEstudiante();
        iniciarAddLicenciado();
        iniciarAddPersona();
+       iniciarConDeportista();
+       iniciarConDoctor();
+       iniciarConEstudiante();
+       iniciarConLicenciado();
+       iniciarConPersona();
    }
     private void iniciar(){
         //buttons from v1 view
@@ -116,44 +121,48 @@ public class Controller implements ActionListener{
     }
 
     private void iniciarAddDeportista(){
-        this.vagregarDeportista.btnVolver.setActionCommand("volverContacto");
+        this.vagregarDeportista.btnVolver.setActionCommand("volverMenu");
         vagregarDeportista.btnVolver.addActionListener(this);
+        this.vagregarDeportista.btnAgregar.setActionCommand("insertarDeportista");
+        vagregarDeportista.btnAgregar.addActionListener(this);
     }
     private void iniciarAddDoctor(){
-        this.vagregarDoctor.btnVolver.setActionCommand("volverContacto");
+        this.vagregarDoctor.btnVolver.setActionCommand("volverMenu");
         vagregarDoctor.btnVolver.addActionListener(this);
+        this.vagregarDoctor.btnAgregar.setActionCommand("insertarDoctor");
+        vagregarDoctor.btnAgregar.addActionListener(this);
     }
     private void iniciarAddEstudiante(){
-        this.vagregarEstudiante.btnVolver.setActionCommand("volverContacto");
+        this.vagregarEstudiante.btnVolver.setActionCommand("volverMenu");
         vagregarEstudiante.btnVolver.addActionListener(this);
     }
     private void iniciarAddLicenciado(){
-        this.vagregarLicenciado.btnVolver.setActionCommand("volverContacto");
+        this.vagregarLicenciado.btnVolver.setActionCommand("volverMenu");
         vagregarLicenciado.btnVolver.addActionListener(this);
     }
     private void iniciarAddPersona(){
-        this.vagregarPersona.btnVolver.setActionCommand("volverContacto");
+        this.vagregarPersona.btnVolver.setActionCommand("volverMenu");
         vagregarPersona.btnVolver.addActionListener(this);
     }
     
     private void iniciarConDeportista(){
-        this.vcontactoDeportista.btnVolver.setActionCommand("volverMenu");
+        this.vcontactoDeportista.btnVolver.setActionCommand("volverContactoDeportista");
         vcontactoDeportista.btnVolver.addActionListener(this);
     }
     private void iniciarConDoctor(){
-        this.vcontactoDoctor.btnVolver.setActionCommand("volverMenu");
+        this.vcontactoDoctor.btnVolver.setActionCommand("volverContactoDoctor");
         vcontactoDoctor.btnVolver.addActionListener(this);
     }
     private void iniciarConEstudiante(){
-        this.vcontactoEstudiante.btnVolver.setActionCommand("volverMenu");
+        this.vcontactoEstudiante.btnVolver.setActionCommand("volverContactoEstudiante");
         vcontactoEstudiante.btnVolver.addActionListener(this);
     }
     private void iniciarConLicenciado(){
-        this.vcontactoLicenciado.btnVolver.setActionCommand("volverMenu");
+        this.vcontactoLicenciado.btnVolver.setActionCommand("volverContactoLicenciado");
         vcontactoLicenciado.btnVolver.addActionListener(this);
     }
     private void iniciarConPersona(){
-        this.vcontactoPersona.btnVolver.setActionCommand("volverMenu");
+        this.vcontactoPersona.btnVolver.setActionCommand("volverContactoPersona");
         vcontactoPersona.btnVolver.addActionListener(this);
     }
    
@@ -164,6 +173,11 @@ public class Controller implements ActionListener{
         this.vagregarEstudiante.setVisible(false);
         this.vagregarLicenciado.setVisible(false);
         this.vagregarPersona.setVisible(false);
+        this.vcontactoDeportista.setVisible(false);
+        this.vcontactoDoctor.setVisible(false);
+        this.vcontactoEstudiante.setVisible(false);
+        this.vcontactoLicenciado.setVisible(false);
+        this.vcontactoPersona.setVisible(false);
     }
     public void actionPerformed(ActionEvent e){
         String comando = e.getActionCommand();
@@ -185,6 +199,12 @@ public class Controller implements ActionListener{
         }else if(comando.equals("volverMenu")){
             closeWindows();
             this.v1view.setVisible(true);
+        }else if(comando.equals("volverContactoDeportista")){
+            closeWindows();
+            this.vcontactoDeportista.setVisible(true);
+        }else if(comando.equals("volverContactoDoctor")){
+            closeWindows();
+            this.vcontactoDoctor.setVisible(true);
         }
         //database insert, search, add and delete
         else if(comando.equals("insertarDeportista")){
