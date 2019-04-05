@@ -10,7 +10,6 @@ package Model;
  * @author beto-
  */
 public class PersonaVO {
-
     private int idPers;
     private String nombrePers;
     private String apPaPers;
@@ -18,6 +17,9 @@ public class PersonaVO {
     private String domicilio;
     private String medContacPref;
     private String ocupacion;
+    private String email;
+    private String numCasa;
+    private String numCelular;
 
     public int getIdPers() {
         return idPers;
@@ -75,4 +77,27 @@ public class PersonaVO {
         this.ocupacion = ocupacion;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getNumCasa() {
+        return numCasa;
+    }
+
+    public void setNumCasa(String numCasa) {
+        this.numCasa = numCasa;
+    }
+
+    public String getNumCelular() {
+        return numCelular;
+    }
+
+    public void setNumCelular(String numCelular) {
+        this.numCelular = numCelular;
+    }
 }

@@ -239,14 +239,12 @@ public class Controller implements ActionListener{
             
         }
         
-        
         else if(comando.equals("modificarEstudiante")){
             this.estudianteDAO.buscarPersona(Integer.parseInt(this.vcontactoDeportista.txtIDDep.getText()));
             this.contactoEstDAO.buscarEstuante(Integer.parseInt(this.vcontactoDeportista.txtIDDep.getText()));
             this.vagregarEstudiante.txtNombre.setText(this.estudianteVO.getNombreEstu()); 
             this.vagregarEstudiante.txtApellidoP.setText(this.estudianteVO.getApPaEstu());
             this.vagregarEstudiante.txtApellidoM.setText(this.estudianteVO.getApMaEstu());
-            this.vagregarEstudiante.txtApellidoP.setText(this.estudianteVO.getApPaEstu());
             this.vagregarEstudiante.txtCarrera.setText(this.estudianteVO.getCarrera());
             this.vagregarEstudiante.txtLugarN.setText(this.estudianteVO.getLuNac());
             this.vagregarEstudiante.cBoxDia.setSelectedItem(this.estudianteVO.getDia());
@@ -257,11 +255,10 @@ public class Controller implements ActionListener{
             this.vagregarEstudiante.txtEmail.setText(this.contactoEstVO.getCorreoEst());
             closeWindows();
             this.vagregarEstudiante.setVisible(true);
-        }
+        }    
         
         else if(comando.equals("eliminarEstudiante")){
-            this.contactoEstDAO.eliminarContactos(Integer.parseInt(this.vcontactoEstudiante.txtIDEstu.getText()));
-            
+            this.contactoEstDAO.eliminarContactos(Integer.parseInt(this.vcontactoEstudiante.txtIDEstu.getText())); 
         }
         
         
@@ -275,6 +272,26 @@ public class Controller implements ActionListener{
             this.personaVO.setOcupacion(this.vagregarPersona.txtOcupacionPer.getText());
             this.personaVO.setMedContacPref((String)this.vagregarPersona.cBoxContactoPer.getSelectedItem());
             this.vagregarPersona.txtNombrePer.getText();           
+        }
+        
+        else if(comando.equals("modificarPersona")){
+            this.personaDAO.buscarPersona(Integer.parseInt(this.vcontactoPersona.txtIDPer.getText()));
+            this.contactoPerDAO.buscarPersona(Integer.parseInt(this.vcontactoPersona.txtIDPer.getText()));
+            this.vagregarPersona.txtNombrePer.setText(this.personaVO.getNombrePers());
+            this.vagregarPersona.txtApPaPer.setText(this.personaVO.getApPaPers());
+            this.vagregarPersona.txtApMaPer.setText(this.personaVO.getApMaPers());
+            this.vagregarPersona.txtDomicilioPer.setText(this.personaVO.getDomicilio());
+            this.vagregarPersona.txtOcupacionPer.setText(this.personaVO.getOcupacion());
+            this.vagregarPersona.cBoxContactoPer.setSelectedItem(this.personaVO.getMedContacPref());
+            this.vagregarPersona.txtCelularPer.setText(this.personaVO.getNumCelular());
+            this.vagregarPersona.txtCasaPer.setText(this.personaVO.getNumCasa());
+            this.vagregarPersona.txtEmail.setText(this.personaVO.getEmail());
+            closeWindows();
+            this.vagregarPersona.setVisible(true);
+        }
+        
+        else if(comando.equals("eliminarPersona")){
+            this.contactoPerDAO.eliminarContactos(Integer.parseInt(this.vcontactoPersona.txtIDPer.getText())); 
         }
     }
 }
