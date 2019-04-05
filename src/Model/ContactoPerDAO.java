@@ -17,18 +17,18 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ContactoPerDAO {
 
-  Connection conex = new Connection();
+    Connection conex = new Connection();
     PreparedStatement est;
-            ShowContacts sw = new ShowContacts();
-        DefaultTableModel contactoPer= new DefaultTableModel();      
+    ShowContacts sw = new ShowContacts();
+    DefaultTableModel contactoPer = new DefaultTableModel();
 
     public void addContact(ContactoPerVO conPersona, PersonaVO persona) {
         try {
             est = conex.getConnection().prepareStatement("Call"
                     + "insert_into_MediosDeContactoPers (?,?,?,?,?,')");
-            est.setString(1, conPersona.getNumCelularPer());
-            est.setString(2, conPersona.getNumCasaPer());
-            est.setString(3, conPersona.getCorreoPer());
+            est.setString(1, conPersona.getNumCelular());
+            est.setString(2, conPersona.getNumCasa());
+            est.setString(3, conPersona.getEmail());
             est.setString(4, persona.getNombrePers());
             est.setString(5, persona.getApPaPers());
             est.setString(6, persona.getApMaPers());
@@ -42,7 +42,6 @@ public class ContactoPerDAO {
         }
     }
 
-    
     public void modificarContacto(PersonaVO per, ContactoPerVO contacto) {
         try {
             String consulta = "UPDATE MediosDeContactoPers SET "
@@ -51,9 +50,9 @@ public class ContactoPerDAO {
             estatuto = conex.getConnection().prepareStatement(consulta);
 
             estatuto.setInt(1, per.getIdPers());
-            estatuto.setString(2, contacto.getNumCelularPer());
-            estatuto.setString(3, contacto.getNumCasaPer());
-            estatuto.setString(4, contacto.getCorreoPer());
+            estatuto.setString(2, contacto.getNumCelular());
+            estatuto.setString(3, contacto.getNumCasa());
+            estatuto.setString(4, contacto.getEmail());
             estatuto.executeUpdate();
 
             JOptionPane.showMessageDialog(null,
@@ -71,8 +70,6 @@ public class ContactoPerDAO {
         }
     }
 
-    
-    
     public ContactoPerVO buscarPersona(int codigo) {
 
         ContactoPerVO contactFound = new ContactoPerVO();
@@ -85,9 +82,9 @@ public class ContactoPerDAO {
             ResultSet res = consulta.executeQuery();
             while (res.next()) {
                 existe = true;
-                contactFound.setNumCelularPer(res.getString("CelPer"));
-                contactFound.setNumCasaPer(res.getString("TelCasaPer"));
-                contactFound.setCorreoPer(res.getString("CorreoPer"));
+                contactFound.setNumCelular(res.getString("CelPer"));
+                contactFound.setNumCasa(res.getString("TelCasaPer"));
+                contactFound.setEmail(res.getString("CorreoPer"));
 
             }
             consulta.close();
@@ -120,15 +117,13 @@ public class ContactoPerDAO {
         }
     }
 
-    public DefaultTableModel mostrarContactosPer(){
-	try{
-            contactoPer= sw.mostrarContactos("Per");
-        }catch (Exception e){
-           JOptionPane.showMessageDialog(null, "Error, no se pudo recuperar Datos");
-	}
+    public DefaultTableModel mostrarContactosPer() {
+        try {
+            contactoPer = sw.mostrarContactos("Per");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error, no se pudo recuperar Datos");
+        }
         return contactoPer;
     }
 
-      
-    
 }
