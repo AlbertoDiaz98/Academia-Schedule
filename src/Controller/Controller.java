@@ -53,6 +53,12 @@ public class Controller implements ActionListener{
     private vAgregarLicenciado vagregarLicenciado;
     private vAgregarPersona vagregarPersona;
     private vOptions voption;
+    private vContactosDeportista vcontactoDeportista;
+    private vContactosDoctor vcontactoDoctor;
+    private vContactosEstudiante vcontactoEstudiante;
+    private vContactoLicenciado vcontactoLicenciado;
+    private vContactosPersona vcontactoPersona;
+    
     //En el constructor inicializamos nuestros objetos
     public Controller( v1 view, Connection connection,ContactoDepDAO contactoDepDAO, 
             ContactoDepVO contactoDepVO, vAgregarDeportista vaddSportMan, ContactoDocDAO contactoDocDAO,
@@ -62,7 +68,9 @@ public class Controller implements ActionListener{
             DoctorDAO doctorDAO, DoctorVO doctorVO, EstudianteDAO estudianteDAO, EstudianteVO estudianteVO,
             LicenciadoDAO licenciadoDAO, LicenciadoVO licendiadoVO, PersonaDAO personaDAO, PersonaVO personaVO,
            vAgregarDoctor vaddDoctor,vAgregarEstudiante vaddStudent
-    , vAgregarLicenciado vaddLicentiate, vAgregarPersona vaddPerson, vOptions voption){
+    , vAgregarLicenciado vaddLicentiate, vAgregarPersona vaddPerson, vOptions voption 
+   ,vContactosDeportista vcDeportista, vContactosDoctor vcDoctor, vContactoLicenciado vcLicenciado,
+    vContactosEstudiante vcEstudiante, vContactosPersona vcPersona){
        this.v1view = view;
        this.connection = connection;
        this.contactoDepDAO = contactoDepDAO;
@@ -76,12 +84,19 @@ public class Controller implements ActionListener{
        this.vagregarLicenciado = vaddLicentiate;
        this.vagregarPersona = vaddPerson;
        this.voption = voption;
+       this.vcontactoDeportista = vcDeportista;
+       this.vcontactoDoctor = vcDoctor;
+       this.vcontactoEstudiante= vcEstudiante;
+       this.vcontactoLicenciado= vcLicenciado;
+       this.vcontactoPersona= vcPersona;
+       
+       
        iniciar();
-       iniciarDeportista();
-       iniciarDoctor();
-       iniciarEstudiante();
-       iniciarLicenciado();
-       iniciarPersona();
+       iniciarAddDeportista();
+       iniciarAddDoctor();
+       iniciarAddEstudiante();
+       iniciarAddLicenciado();
+       iniciarAddPersona();
    }
     private void iniciar(){
         //buttons from v1 view
@@ -100,26 +115,48 @@ public class Controller implements ActionListener{
         this.v1view.setVisible(true);
     }
 
-    private void iniciarDeportista(){
-        this.vagregarDeportista.btnVolver.setActionCommand("volverMenu");
+    private void iniciarAddDeportista(){
+        this.vagregarDeportista.btnVolver.setActionCommand("volverContacto");
         vagregarDeportista.btnVolver.addActionListener(this);
     }
-    private void iniciarDoctor(){
-        this.vagregarDoctor.btnVolver.setActionCommand("volverMenu");
+    private void iniciarAddDoctor(){
+        this.vagregarDoctor.btnVolver.setActionCommand("volverContacto");
         vagregarDoctor.btnVolver.addActionListener(this);
     }
-    private void iniciarEstudiante(){
-        this.vagregarEstudiante.btnVolver.setActionCommand("volverMenu");
+    private void iniciarAddEstudiante(){
+        this.vagregarEstudiante.btnVolver.setActionCommand("volverContacto");
         vagregarEstudiante.btnVolver.addActionListener(this);
     }
-    private void iniciarLicenciado(){
-        this.vagregarLicenciado.btnVolver.setActionCommand("volverMenu");
+    private void iniciarAddLicenciado(){
+        this.vagregarLicenciado.btnVolver.setActionCommand("volverContacto");
         vagregarLicenciado.btnVolver.addActionListener(this);
     }
-    private void iniciarPersona(){
-        this.vagregarPersona.btnVolver.setActionCommand("volverMenu");
+    private void iniciarAddPersona(){
+        this.vagregarPersona.btnVolver.setActionCommand("volverContacto");
         vagregarPersona.btnVolver.addActionListener(this);
     }
+    
+    private void iniciarConDeportista(){
+        this.vcontactoDeportista.btnVolver.setActionCommand("volverMenu");
+        vcontactoDeportista.btnVolver.addActionListener(this);
+    }
+    private void iniciarConDoctor(){
+        this.vcontactoDoctor.btnVolver.setActionCommand("volverMenu");
+        vcontactoDoctor.btnVolver.addActionListener(this);
+    }
+    private void iniciarConEstudiante(){
+        this.vcontactoEstudiante.btnVolver.setActionCommand("volverMenu");
+        vcontactoEstudiante.btnVolver.addActionListener(this);
+    }
+    private void iniciarConLicenciado(){
+        this.vcontactoLicenciado.btnVolver.setActionCommand("volverMenu");
+        vcontactoLicenciado.btnVolver.addActionListener(this);
+    }
+    private void iniciarConPersona(){
+        this.vcontactoPersona.btnVolver.setActionCommand("volverMenu");
+        vcontactoPersona.btnVolver.addActionListener(this);
+    }
+   
     public void closeWindows(){
         this.v1view.setVisible(false);
         this.vagregarDeportista.setVisible(false);
@@ -169,6 +206,50 @@ public class Controller implements ActionListener{
             this.doctorVO.setDireHospital(this.vagregarDoctor.txtDireccionHospital.getText());
             this.vagregarDoctor.txtNombre.getText();   
         }
+        
+        else if(comando.equals("insertarEstudiante")){
+            this.contactoEstVO.setCorreoEst(this.vagregarEstudiante.txtEmail.getText());
+            this.contactoEstVO.setNumCasaEst(this.vagregarEstudiante.txtCasa.getText());
+            this.contactoDocVO.setNumCelularDoc(this.vagregarEstudiante.txtCelular.getText());
+            this.estudianteVO.setNombreEstu(this.vagregarEstudiante.txtNombre.getText());
+            this.estudianteVO.setApPaEstu(this.vagregarEstudiante.txtApellidoP.getText());
+            this.estudianteVO.setApMaEstu(this.vagregarEstudiante.txtApellidoM.getText());
+            this.estudianteVO.setDia((String)this.vagregarEstudiante.cBoxDia.getSelectedItem());
+            this.estudianteVO.setMes((String)this.vagregarEstudiante.cBoxMes.getSelectedItem());
+            this.estudianteVO.setAño((String)this.vagregarEstudiante.cBoxAño.getSelectedItem());
+            this.estudianteVO.setCarrera((String)this.vagregarEstudiante.txtCarrera.getText());
+            this.estudianteVO.setLuNac(this.vagregarDoctor.txtNombreHospital.getText());
+            this.estudianteDAO.addPerson(estudianteVO);
+            this.contactoEstDAO.addContact(contactoEstVO, estudianteVO);     
+            
+            
+        }
+        
+        
+        else if(comando.equals("modificarEstudiante")){
+            this.estudianteDAO.buscarPersona(Integer.parseInt(this.vcontactoDeportista.txtIDDep.getText()));
+            this.contactoEstDAO.buscarEstuante(Integer.parseInt(this.vcontactoDeportista.txtIDDep.getText()));
+            this.vagregarEstudiante.txtNombre.setText(this.estudianteVO.getNombreEstu()); 
+            this.vagregarEstudiante.txtApellidoP.setText(this.estudianteVO.getApPaEstu());
+            this.vagregarEstudiante.txtApellidoM.setText(this.estudianteVO.getApMaEstu());
+            this.vagregarEstudiante.txtApellidoP.setText(this.estudianteVO.getApPaEstu());
+            this.vagregarEstudiante.txtCarrera.setText(this.estudianteVO.getCarrera());
+            this.vagregarEstudiante.txtLugarN.setText(this.estudianteVO.getLuNac());
+            this.vagregarEstudiante.cBoxDia.setSelectedItem(this.estudianteVO.getDia());
+            this.vagregarEstudiante.cBoxMes.setSelectedItem(this.estudianteVO.getMes());
+            this.vagregarEstudiante.cBoxAño.setSelectedItem(this.estudianteVO.getAño());
+            this.vagregarEstudiante.txtCelular.setText(this.contactoEstVO.getNumCelularEst());
+            this.vagregarEstudiante.txtCasa.setText(this.contactoEstVO.getNumCasaEst());
+            this.vagregarEstudiante.txtEmail.setText(this.contactoEstVO.getCorreoEst());
+            closeWindows();
+            this.vagregarEstudiante.setVisible(true);
+        }
+        
+        else if(comando.equals("eliminarEstudiante")){
+            this.contactoEstDAO.eliminarContactos(Integer.parseInt(this.vcontactoEstudiante.txtIDEstu.getText()));
+            
+        }
+        
         
         else if(comando.equals("insertarPersona")){
             this.contactoPerVO.setCorreoPer(this.vagregarPersona.txtEmail.getText());

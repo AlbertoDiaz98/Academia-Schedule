@@ -49,6 +49,12 @@ public class ScheduleProyect {
         vAgregarLicenciado vaddLicentiate = new vAgregarLicenciado();
         vAgregarPersona vaddPerson = new vAgregarPersona();
         vOptions voption = new vOptions();
+        vContactosDeportista vcDeportista= new vContactosDeportista();
+        vContactosDoctor vcDoctor = new vContactosDoctor();
+        vContactoLicenciado vcLicenciado = new vContactoLicenciado();
+        vContactosEstudiante vcEstudiante = new vContactosEstudiante();
+        vContactosPersona vcPersona = new vContactosPersona();
+
         
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
@@ -56,7 +62,8 @@ public class ScheduleProyect {
             new Controller(vista1,con,contactoDepDAO,contactoDepVO, 
                 vaddSportMan,contactoDocDAO,contactoDocVO,contactoEstDAO,contactoEstVO,contactoLicDAO,
                     contactoLicVO,contactoPerDAO,contactoPerVO,deportistasDAO,deportistasVO,
-            doctorDAO,doctorVO,estudianteDAO,estudianteVO,licenciadoDAO,licenciadoVO,personaDAO,personaVO, vaddDoctor, vaddStudent, vaddLicentiate, vaddPerson, voption).go();
+            doctorDAO,doctorVO,estudianteDAO,estudianteVO,licenciadoDAO,licenciadoVO,personaDAO,personaVO, vaddDoctor, vaddStudent, vaddLicentiate, vaddPerson, voption, 
+                    vcDeportista, vcDoctor, vcLicenciado, vcEstudiante, vcPersona).go();
         } catch (UnsupportedLookAndFeelException ex) {}
           catch (ClassNotFoundException ex) {}
           catch (InstantiationException ex) {}
